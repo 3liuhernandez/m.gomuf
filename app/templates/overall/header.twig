@@ -1,0 +1,32 @@
+<style>
+
+.bg-image {
+  /* The image used */
+  background-image: url("assets/app/img/libro.jpg");
+  
+  /* Full height */
+  height: 1024px; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<header class="w3-display-container w3-center">
+    <div class="bg-image"></div>
+    <div class="mySlides w3-animate-opacity">
+        <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+            <div class="w3-indigo w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+                <h1 class="w3-xlarge">Descarga el E-Book aquí</h1>
+                <hr class="w3-opacity">
+                <!--<p>Super simple installment: free of charge</p>-->
+                <p>
+                    <button class="w3-button w3-block w3-green w3-hover-white w3-round w3-hover-text-green" onclick="document.getElementById('download').style.display='block'">
+                        Descargar <i class="fa fa-file"></i>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</header>

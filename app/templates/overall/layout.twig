@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{ base_assets()|raw }}
+    <title>{{ config.build.name }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/vendor/ladda/ladda.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="assets/vendor/toastr/build/toastr.min.css">
+    <link rel="stylesheet" href="assets/app/css/app.css">
+    {% block appHeader %}{% endblock %}
+    <style>
+        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+        body {font-size: 16px;}
+        img {margin-bottom: -8px;}
+        .mySlides {display: none;}
+    </style>
+</head>
+<body class="w3-content w3-blue" style="max-width:1500px;">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top topnav">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a href="home" class="w3-bar-item w3-button"><b>GOMUF</b></a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+            <a href="#nosotros" class="w3-bar-item w3-button" data-item="nosotros">Nosotros</a>
+            <a href="#valores" class="w3-bar-item w3-button" data-item="valores">Valores</a>
+            <a href="#staff" class="w3-bar-item w3-button" data-item="staff">Staff</a>
+            <a href="#campus_accion" class="w3-bar-item w3-button" data-item="campus_accion">Campus de Acción</a>
+            <a href="#alianzas" class="w3-bar-item w3-button" data-item="staff">Alianzas</a>
+            <a href="#contact" class="w3-bar-item w3-button" data-item="contact">Contacto</a>
+        </div>
+    </div>
+</div>
+
+<header class="w3-container banner w3-center w3-padding-32 w3-white" style="margin-top: 5%">
+    <h1 class="w3-jumbo"><b>Proyecto Global</b></h1>
+    <h3 class="w3-xxlarge"><b><i>Metamorfosis Universitaria Fraternity</i></b></h3>
+</header>
+
+
+{% include 'overall/header' %}
+
+
+{% block appBody %}{% endblock %}
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">GoMuf Developers</a></p>
+</footer>
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/ladda/spin.min.js"></script>
+<script src="assets/vendor/ladda/ladda.min.js"></script>
+<script src="assets/vendor/toastr/build/toastr.min.js"></script>
+<script src="assets/jscontrollers/overall/toast.js"></script>
+<script src="assets/app/js/app.js"></script>
+{% block appFooter %}{% endblock %}
+</body>
+</html>

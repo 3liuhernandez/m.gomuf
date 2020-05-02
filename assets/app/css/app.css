@@ -1,0 +1,63 @@
+a{
+    text-decoration: none;
+}
+.topnav{
+    z-index:  1000;
+}
+#campus_accion, #alianzas{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+#campus_accion .w3-jumbo, #alianzas .w3-jumbo{
+    position: relative;
+    z-index: 1;
+}
+#campus_accion::before, #alianzas::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+.banner{
+    background-image: url('../img/logo.jpg');
+    background-size: 190px auto;
+    background-position: left;
+    background-position-y: 30px;
+    background-position-x: 20px;
+    /* background-position-x: 100%; */
+    background-repeat: no-repeat;
+}
+.bg-cover{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.black-background{
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    opacity: 0.75;
+    transition: all .3s;
+}
+
+.black-background:hover{
+    opacity: 1;
+}
+#nosotros{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: 700px;
+    background-image: url('assets/app/img/fondo.jpg');
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/app/img/fondo.jpg');*/
+}
+
+.nombre_casa_estudio{
+    font-weight: 600;
+    padding: 5% !important;
+}

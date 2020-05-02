@@ -1,0 +1,17 @@
+{% extends 'overall/layout' %}
+{% block appBody %}
+    <form role="form" id="login_form">
+        <input type="email" name="email" placeholder="Email" />
+        <input type="password" name="pass" placeholder="Contraseña" />
+        <button type="button" id="login">Iniciar</button>
+    </form>
+        
+    <form role="form" id="lostpass_form">
+        <input type="email" name="email" placeholder="Email" />
+        <button type="button" id="lostpass">Recuperar contraseña</button>
+    </form>
+{% endblock %}
+{% block appFooter %}
+    <script src="assets/jscontrollers/login/login.js"></script>
+    <script src="assets/jscontrollers/lostpass/lostpass.js"></script>
+{% endblock %}
