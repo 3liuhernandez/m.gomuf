@@ -18,38 +18,67 @@
         body {font-size: 16px;}
         img {margin-bottom: -8px;}
         .mySlides {display: none;}
+
+        #sidetop a{
+          margin:2%;
+        }
     </style>
 </head>
-<body class="w3-content w3-blue" style="max-width:1500px;">
+<body class="w3-content w3-blue" style="max-width: 1400px">
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top topnav">
+<div class="w3-top topnav" style="width: 100%">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a href="home" class="w3-bar-item w3-button"><b>GOMUF</b></a>
+        <button class="w3-button w3-white w3-large w3-right" onclick="w3_open()">&#9776;</button>
         <!-- Float links to the right. Hide them on small screens -->
-        <div class="w3-right">
-            <button class="w3-button w3-teal w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
-            <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:200px;right:0;" id="mySidebar">
-            <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-            <a href="#nosotros" class="w3-bar-item w3-button" data-item="nosotros">Nosotros</a>
-            <a href="#valores" class="w3-bar-item w3-button" data-item="valores">Valores</a>
-            <a href="#staff" class="w3-bar-item w3-button" data-item="staff">Staff</a>
-            <a href="#campus_accion" class="w3-bar-item w3-button" data-item="campus_accion">Campus de Acción</a>
-            <a href="#alianzas" class="w3-bar-item w3-button" data-item="staff">Alianzas</a>
-            <a href="#contact" class="w3-bar-item w3-button" data-item="contact">Contacto</a>
-            </div>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none;z-index:5; right: 0px;" id="sidetop">
+          <p class="w3-large w3-center"><b>Proyecto Global</b></p>
+          <p class="w3-large w3-center"><b><i>Metamorfosis Universitaria Fraternity</i></b></p>
+
+          <!--<button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>-->
+          <a href="#nosotros" class="w3-bar-item w3-button w3-blue" data-item="nosotros">Nosotros</a>
+          <a href="#valores" class="w3-bar-item w3-button w3-blue" data-item="valores">Valores</a>
+          <a href="#staff" class="w3-bar-item w3-button w3-blue" data-item="staff">Staff</a>
+          <a href="#campus_accion" class="w3-bar-item w3-button w3-blue" data-item="campus_accion">Campus de Acción</a>
+          <a href="#alianzas" class="w3-bar-item w3-button w3-blue" data-item="staff">Alianzas</a>
+          <a href="#contact" class="w3-bar-item w3-button w3-blue" data-item="contact">Contacto</a>
+
+          <!-- aside bottom -->
+          <div class="w3-row w3-bottom">
+            <button class="w3-button w3-inline">
+              <a href="mailto:gomuf.com@gmail.com" target="_blanck">
+                <i class="fa fa-envelope-o w3-text-blue"></i>
+              </a>
+            </button>
+            <button class="w3-button">
+                  <a href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blanck">
+                <i class="fa fa-facebook w3-text-blue"></i>
+              </a>
+            </button>
+            <button class="w3-button">
+                  <a href="https://www.instagram.com/mufvalencia/" target="_blanck">
+                <i class="fa fa-instagram w3-text-blue"></i>
+              </a>
+            </button>
+          </div>
         </div>
+
+
+        <!-- overlay -->
+        <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="overlay_navtop"></div>
     </div>
 </div>
 
-<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+
+
 
 <header class="w3-container w3-center w3-padding-32 w3-white" style="margin-top: 10%">
   <img src="assets/app/img/logo.png" class="w3-image" width="200" height="200">
-    <h1 class="w3-xlarge"><b>Proyecto Global</b></b>
+    <h1 class="w3-xlarge"><b>Proyecto Global</b></h1>
     <h3 class="w3-large"><b><i>Metamorfosis Universitaria Fraternity</i></b></h3>
 </header>
-
 
 {% include 'overall/header' %}
 
@@ -84,13 +113,13 @@ function showDivs(n) {
 
 <script>
 function w3_open() {
-document.getElementById("mySidebar").style.display = "block";
-document.getElementById("myOverlay").style.display = "block";
+document.getElementById("sidetop").style.display = "block";
+document.getElementById("overlay_navtop").style.display = "block";
 }
 
 function w3_close() {
-document.getElementById("mySidebar").style.display = "none";
-document.getElementById("myOverlay").style.display = "none";
+document.getElementById("sidetop").style.display = "none";
+document.getElementById("overlay_navtop").style.display = "none";
 }
 </script>
 
