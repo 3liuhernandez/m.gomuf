@@ -30,7 +30,7 @@
 <div class="w3-top topnav" style="width: 100%">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a href="home" class="w3-bar-item w3-button"><b>GOMUF</b></a>
-        <button class="w3-button w3-white w3-large w3-right" onclick="w3_open()">&#9776;</button>
+        <button class="w3-button w3-white w3-large w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
         <!-- Float links to the right. Hide them on small screens -->
         <!-- Sidebar -->
         <div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none;z-index:5; right: 0px;" id="sidetop">
@@ -44,9 +44,9 @@
           <a href="#campus_accion" class="w3-bar-item w3-button w3-blue" data-item="campus_accion">Campus de Acción</a>
           <a href="#alianzas" class="w3-bar-item w3-button w3-blue" data-item="staff">Alianzas</a>
           <a href="#contact" class="w3-bar-item w3-button w3-blue" data-item="contact">Contacto</a>
-
+          <br><br>
           <!-- aside bottom -->
-          <div class="w3-row w3-bottom">
+          <div class="w3-row w3-display-middlebottom">
             <button class="w3-button w3-inline">
               <a href="mailto:gomuf.com@gmail.com" target="_blanck">
                 <i class="fa fa-envelope-o w3-text-blue"></i>
@@ -63,8 +63,17 @@
               </a>
             </button>
           </div>
+          <br>
         </div>
 
+        <div class="w3-right w3-hide-small w3-hide-medium w3-medium">
+            <a href="#nosotros" class="w3-bar-item w3-button" data-item="nosotros">Nosotros</a>
+            <a href="#valores" class="w3-bar-item w3-button" data-item="valores">Valores</a>
+            <a href="#staff" class="w3-bar-item w3-button" data-item="staff">Staff</a>
+            <a href="#campus_accion" class="w3-bar-item w3-button" data-item="campus_accion">Campus de Acción</a>
+            <a href="#alianzas" class="w3-bar-item w3-button" data-item="staff">Alianzas</a>
+            <a href="#contact" class="w3-bar-item w3-button" data-item="contact">Contacto</a>
+        </div>
 
         <!-- overlay -->
         <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="overlay_navtop"></div>

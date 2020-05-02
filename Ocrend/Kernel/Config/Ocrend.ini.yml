@@ -37,7 +37,7 @@ twig:
   
 # Configuración del sitio
 build:
-  production: false
+  production: true
   name: Gomuf
   url: http://localhost/m.gomuf/
   timezone: America/Caracas
