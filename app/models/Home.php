@@ -122,7 +122,6 @@ class Home extends Models implements IModels {
                 ));
             }
 
-
             return array('success' => 1, 'message' => 'Su libro se descargará en breve.', 'file' => self::FILE);
         } catch (ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());
