@@ -68,7 +68,7 @@ class Home extends Models implements IModels {
                 '.$msj;
 
             # Enviar email
-            $email_send = Helper\Emails::send(["gomuf.com@gmail.com" => "GOMUF"],array(
+            $email_send = Helper\Emails::send(["contacto.gomuf@gmail.com" => "GOMUF"],array(
                 # Título del mensaje
                 '{{title}}' => 'Mensaje de contacto - ' . $config['build']['name'],
                 # Url de logo
@@ -120,6 +120,8 @@ class Home extends Models implements IModels {
                     'email' => $email,
                     'message' => $msj
                 ));
+            }else{
+                $this->db->query("UPDATE suscripcion SET download = download + 1 WHERE email = '$email' LIMIT 1");
             }
 
 

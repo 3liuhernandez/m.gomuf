@@ -11,9 +11,9 @@ database:
   drivers:
     mysql: 
       host: localhost
-      user: root
-      pass:
-      name: gomuf
+      user: gomufcom_user
+      pass: 123456GOmuf*e
+      name: gomufcom_gomuf
       port: default
       socket: default
     sqlite3:
@@ -22,10 +22,10 @@ database:
 # Configuración de servidor SMTP
 mailer:
   host: smtp.gmail.com
-  user: gomuf.com@gmail.com
+  user: contacto.gomuf@gmail.com
   pass: 123456R*e
   port: 587
-  logo: 
+  logo:
 
 # Configuración de twig
 twig:
@@ -39,7 +39,7 @@ twig:
 build:
   production: true
   name: Gomuf
-  url: http://localhost/m.gomuf/
+  url: https://m.gomuf.com
   timezone: America/Caracas
   version: 3.0.1
 
@@ -58,5 +58,5 @@ api:
 
 # Configuración de ruta
 router:
-  ssl: false
-  path: localhost/m.gomuf/
+  ssl: true
+  path: m.gomuf.com/
