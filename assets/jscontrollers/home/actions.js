@@ -60,7 +60,7 @@ $('#download_form').submit(e => {
         if(json.success == 1) {
             success_toastr('Éxito', json.message);
             document.getElementById('download_form').reset();
-            document.getElementById('download').style.display='none';
+            document.getElementById('download_ebook').style.display='none';
 
             var anchor=document.createElement('a');
             anchor.setAttribute('href',json.file);

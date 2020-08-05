@@ -31,7 +31,7 @@ class Home extends Models implements IModels {
      * @return string
      */
 
-    CONST FILE = 'assets/app/doc/REENCUENTRO CON LAS NUEVAS GENERACIONES POST COVID 19.pdf';
+    CONST FILE = 'assets/app/doc/';
 
     /**
      * Envía un mensaje de contacto
@@ -44,7 +44,7 @@ class Home extends Models implements IModels {
             $name = $http->request->get('name');
             $email = $http->request->get('email');
             $msj = $http->request->get('msj');
-            
+
             # Verificar campos vacíos
             if(Helper\Functions::e($name, $email, $msj)){
                 throw new ModelsException('Debes llenar todos los campos.');
@@ -99,6 +99,7 @@ class Home extends Models implements IModels {
             $name = $http->request->get('name');
             $email = $http->request->get('email');
             $msj = $http->request->get('msj');
+            $book_type = $this->db->scape($http->request->get('book_type'));
 
             # Verificar campos vacíos
             if(Helper\Functions::e($name, $email, $msj)){
@@ -110,22 +111,32 @@ class Home extends Models implements IModels {
                 throw new ModelsException('El email debe tener un formto válido.');
             }
 
+            # datos del libro
+            $book = $this->db->select('*', 'libros', null, "id_libro = '$book_type'", 1);
+            $directorio = self::FILE . $book[0]['directorio'];
+
+            # Verificar que el libro exista
+            if (false == $book || !file_exists('../'.$directorio)) {
+                throw new ModelsException('El libro que intentas descagar no existe.');
+            }
+
             $email = $this->db->scape($email);
+
+
             # Verificar si no existe el email no guardamos
-            if (false == $this->db->select('id_suscriptor', 'suscripcion', null, "email = '$email'", 1)) {
+            if (false == $this->db->select('id_suscriptor', 'suscripcion', null, "email = '$email' AND id_libro = '$book_type'", 1)) {
                 
                 # Insertar registro
                 $this->db->insert('suscripcion', array(
                     'name' => $name,
+                    'id_libro' => $book_type,
                     'email' => $email,
                     'message' => $msj
                 ));
             }else{
-                $this->db->query("UPDATE suscripcion SET download = download + 1 WHERE email = '$email' LIMIT 1");
+                $this->db->query("UPDATE suscripcion SET download = download + 1 WHERE email = '$email' AND id_libro = '$book_type' LIMIT 1");
             }
-
-
-            return array('success' => 1, 'message' => 'Su libro se descargará en breve.', 'file' => self::FILE);
+            return array('success' => 1, 'message' => 'Su libro se descargará en breve.', 'file' => $directorio);
         } catch (ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());
         }

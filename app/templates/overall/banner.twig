@@ -1,0 +1,472 @@
+<style>
+
+.bg-image {
+  /* The image used */
+  background-image: url("assets/app/img/libro.jpg");
+  
+  /* Full height */
+  height: 512px;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<header class="w3-display-container w3-center w3-hide">
+    <div class="bg-image"></div>
+    <div class="mySlides w3-animate-opacity">
+
+        <!-- vista para small, ocultando medium -->
+        <div class="w3-display-bottommiddle w3-padding w3-hide-medium w3-hide-large" style="width:75%">
+            <div class="w3-indigo w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+                <p class="w3-small">Descarga el E-Book aquí</p>
+                <hr class="w3-opacity">
+                <!--<p>Super simple installment: free of charge</p>-->
+                <p>
+                    <button class="w3-button w3-block w3-green w3-hover-white w3-round w3-hover-text-green" onclick="document.getElementById('download').style.display='block'">
+                        Descargar <i class="fa fa-file"></i>
+                    </button>
+                </p>
+            </div>
+        </div>
+
+        <!-- vista para medium, ocultando small -->
+        <div class="w3-display-left w3-padding w3-hide-small" style="width:45%">
+            <div class="w3-indigo w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+                <p class="">Descarga el E-Book aquí</p>
+                <hr class="w3-opacity">
+                <!--<p>Super simple installment: free of charge</p>-->
+                <p>
+                    <button class="w3-button w3-block w3-green w3-hover-white w3-round w3-hover-text-green" onclick="document.getElementById('download').style.display='block'">
+                        Descargar <i class="fa fa-file"></i>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<style>
+.banner-image1 {
+    background-image: url("assets/app/img/libros/llamado_misionero_ciberia.jpg");
+    background-position: center;
+}
+
+.banner-image2 {
+    background-image: url("assets/app/img/libros/lo_que_aprendi_esta_cuarentena.jpg");
+    background-position: center;
+}
+
+.banner-image3 {
+    background-image: url("assets/app/img/libros/libro.jpg");
+    background-position: center;
+}
+
+.banner-image4 {
+    background-image: url("assets/app/img/banners/bunker_logo.jpg");
+    background-position: bottom;
+}
+
+.banner-image {
+    /* Add the blur effect */
+    filter: blur(7px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 400px;
+
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.banner-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}
+
+.banner_slides:hover{
+    cursor: pointer;
+}
+</style>
+
+
+<!-- style news section-->
+<style>
+#news{
+    /*background: url("assets/app/img/news/bg1.jpg") center no-repeat;*/
+    background-size: 100%;
+}
+
+#news_galeria:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#news_galeria {
+    text-align: center;
+    display: block;
+}
+
+.newsMySlides {
+    display: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.newsModal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #525e7d;
+}
+
+/* Modal Content */
+.news-modal-content {
+    position: relative;
+    background-color: #000b1bf7;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/*title's modal*/
+.news-modal-content b {
+    width: 70%;
+}
+
+/* The Close Button */
+#newsMyModal .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#newsMyModal .close:hover,
+#newsMyModal .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+#newsMyModal .prev,
+#newsMyModal .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+#newsMyModal .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+#newsMyModal .prev:hover,
+#newsMyModal .next:hover,
+#newsMyModal .close:hover {
+    background-color: rgba(115, 113, 113, 0.47);
+}
+
+/* Number text (1/3 etc) */
+#newsMyModal .numbertext {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+#news_galeria img {
+    margin-bottom: -4px;
+    width: 40%;
+    margin: 1%;
+}
+
+#newsMyModal .demo {
+    opacity: 0.4;
+}
+
+#newsMyModal .active,
+#newsMyModal .demo:hover {
+    opacity: 1;
+}
+
+#news_galeria img.hover-shadow {
+    transition: 0.3s;
+}
+
+#news_galeria img.hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*img active*/
+#newsMyModal img{
+    width: 100%;
+}
+
+/*images gallery*/
+#newsMyModal div.w3-col {
+    margin: 10px;
+}
+</style>
+
+<!-- banner section -->
+<div class="w3-container w3-display-container w3-padding-large w3-white">
+    <div class="banner_slides" onclick="banner_enlace('ebooks/#cyberia');">
+        <div class="banner-image banner-image1"></div>
+        <div class="banner-text">
+            <b class="w3-xlarge w3-green">Proyecto E-Book</b><br><br>
+            <b class="w3-xlarge">Llamado Misionero A Cyberia</b><br>
+            <p class="w3-large">Dario Ortega</p>
+        </div>
+    </div>
+
+    <div class="banner_slides" onclick="banner_enlace('ebooks/#cuarentena');">
+        <div class="banner-image banner-image2"></div>
+        <div class="banner-text">
+            <b class="w3-xlarge w3-red">Proyecto E-Book</b><br><br>
+            <b class="w3-xlarge">Lo Que Aprendí En Esta Cuarentena</b><br>
+            <p class="w3-large">Varios Autores</p>
+        </div>
+    </div>
+
+    <div class="banner_slides" onclick="banner_enlace('ebooks/#post-covid');">
+        <div class="banner-image banner-image3"></div>
+        <div class="banner-text">
+            <b class="w3-xlarge w3-blue">Proyecto E-Book</b><br><br>
+            <b class="w3-xlarge">Reencuentro Con <br>Las Nuevas Generaciones <br>Post Covid-19</b><br>
+            <p class="w3-large">Dario Ortega</p>
+        </div>
+    </div>
+
+    <div class="banner_slides" onclick="banner_enlace('bunker');">
+        <div class="banner-image banner-image4"></div>
+        <div class="banner-text">
+            <b class="w3-large w3-green">PODCAST | Live Stream</b><br><br>
+            <b class="w3-xxlarge w3-block w3-center">Bunker</b><br>
+            <span class="w3-xlarge w3-center"> Martes y Miércoles <br> 09:00 PM </span>
+            <br><br>
+            <span class="w3-center">
+                <i class="w3-badge fa fa-facebook w3-blue"></i>
+                Misión Última Frontera Valencia
+            </span>
+            <br>
+            <p class="w3-large w3-block w3-hide">Dario Ortega</p>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-padding w3-center">
+        <button class="w3-button" onclick="myShow.previous()"><b>Anterior</b></button>
+        <button class="w3-button" onclick="myShow.next()"><b>Siguiente</b></button>
+    </div>
+</div>
+
+
+<!-- news section -->
+<!-- news section -->
+<div class="w3-section w3-container w3-green" id="news" style="margin-top: 0px !important; margin-bottom: 0px !important">
+    <p class="w3-xlarge w3-center">¡Buenas Nuevas!</p>
+    <div class="w3-row w3-section w3-container">
+        <div class="w3-col l6 m6 s12">
+            <p class="w3-large w3-center">
+                <b>Casa MUF para los niños</b><br>
+                En medio de las circunstancias actuales hemos visto la provición de Dios para la remodelacion de casa para los niños de la comunidad.
+                <br><br>
+                <b class="w3-center w3-center-align">Dios provee para su obra!</b>
+                <br><br>
+                Si quieres unirte a lo que Dios está haciendo contáctanos.
+                <br><br>
+                <i class="fa fa-facebook w3-blue w3-badge w3-padding"></i><br>
+                <a href="https://www.facebook.com/hashtag/muf2020?__eep__=6&source=feed_text">
+                    <b class="w3-hover-text-blue">#MUF2020</b>
+                </a>
+                <a href="https://www.facebook.com/hashtag/metamorfosisinfantil?__eep__=6&source=feed_text" target="_blank">
+                    <b class="w3-hover-text-blue">#Metamorfosisinfantil</b>
+                </a>
+            </p>
+        </div>
+
+        <div class="w3-col l6 m6 s12" id="news_galeria">
+            <img src="assets/app/img/news/casa1.png" onclick="openModal();currentImgNews(1)" class="hover-shadow cursor">
+
+            <img src="assets/app/img/news/casa2.png" onclick="openModal();currentImgNews(2)" class="hover-shadow cursor">
+
+            <img src="assets/app/img/news/casa3.png" onclick="openModal();currentImgNews(3)" class="hover-shadow cursor">
+
+            <img src="assets/app/img/news/casa4.png" onclick="openModal();currentImgNews(4)" class="hover-shadow cursor">
+        </div>
+    </div>
+</div>
+
+
+<!-- modal news -->
+<div id="newsMyModal" class="newsModal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="news-modal-content">
+        <b class="w3-large w3-center w3-top"> <br>News's Gallery</b>
+        <div class="newsMySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="assets/app/img/news/casa1.png">
+        </div>
+
+        <div class="newsMySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="assets/app/img/news/casa2.png">
+        </div>
+
+        <div class="newsMySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="assets/app/img/news/casa3.png">
+        </div>
+
+        <div class="newsMySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="assets/app/img/news/casa4.png">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+
+        <div class="w3-col l3 m3 s2">
+            <img class="demo cursor" src="assets/app/img/news/casa1.png" onclick="currentSlide(1)" />
+        </div>
+
+        <div class="w3-col l3 m3 s2">
+            <img class="demo cursor" src="assets/app/img/news/casa2.png" onclick="currentSlide(2)" />
+        </div>
+
+        <div class="w3-col l3 m3 s2">
+            <img class="demo cursor" src="assets/app/img/news/casa3.png" onclick="currentSlide(3)" />
+        </div>
+
+        <div class="w3-col l3 m3 s2">
+            <img class="demo cursor" src="assets/app/img/news/casa4.png" onclick="currentSlide(4)" />
+        </div>
+
+    </div>
+</div>
+
+{% block appFooter %}
+    <script src="assets/app/js/w3.js"></script>
+{% endblock %}
+
+<!-- script banner section -->
+<script>
+    w3.slideshow(".banner_slides", 7000);
+    myShow = w3.slideshow(".banner_slides", 7000);
+</script>
+
+<!-- script banner section -->
+<script>
+    function banner_enlace(enlace) {
+        /*window.location.replace("http://www.facebook.com");*/
+        switch(enlace){
+            case 'ebooks/#cyberia':
+                window.location.replace(enlace);
+                break;
+
+            case 'ebooks/#cuarentena':
+                window.location.replace(enlace);
+                break;
+
+            case 'ebooks/#post-covid':
+                window.location.replace(enlace);
+                break;
+
+            case 'bunker':
+                window.open("https://www.facebook.com/mufvalencia.ortegaalbornoz/");
+                break;
+
+            default:
+                alert(enlace);
+                window.location.replace('/');
+                break;
+        }
+    }
+</script>
+
+<!-- script news section -->
+<script>
+    function openModal() {
+        document.getElementById("newsMyModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("newsMyModal").style.display = "none";
+    }
+
+    var newSlideIndex = 1;
+    showSlides(newSlideIndex);
+
+    function plusSlides(n) {
+        showSlides(newSlideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(newSlideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var newSlides = document.getElementsByClassName("newsMySlides");
+        var newsDots = document.getElementsByClassName("demo");
+
+        if (n > newSlides.length) {newSlideIndex = 1}
+        if (n < 1) {newSlideIndex = newSlides.length}
+        for (i = 0; i < newSlides.length; i++) {
+            newSlides[i].style.display = "none";
+        }
+        for (i = 0; i < newsDots.length; i++) {
+            newsDots[i].className = newsDots[i].className.replace(" active", "");
+        }
+        newSlides[newSlideIndex-1].style.display = "block";
+        newsDots[newSlideIndex-1].className += " active";
+
+    }
+</script>
