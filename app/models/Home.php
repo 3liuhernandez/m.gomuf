@@ -136,12 +136,7 @@ class Home extends Models implements IModels {
             }else{
                 $this->db->query("UPDATE suscripcion SET download = download + 1 WHERE email = '$email' AND id_libro = '$book_type' LIMIT 1");
             }
-<<<<<<< HEAD
-
-            return array('success' => 1, 'message' => 'Su libro se descargará en breve.', 'file' => self::FILE);
-=======
             return array('success' => 1, 'message' => 'Su libro se descargará en breve.', 'file' => $directorio);
->>>>>>> 61e161446391b86e37b78e906869f3e8f1f072d0
         } catch (ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());
         }
