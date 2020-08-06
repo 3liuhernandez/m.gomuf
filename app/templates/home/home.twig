@@ -1,45 +1,105 @@
 {% extends 'overall/layout' %}
 {% block appBody %}
-<!-- Proyecto E-Book Section -->
-<div class="w3-padding-64 w3-white">
-    <div class="w3-row-padding">
-        <div class="w3-col l8 m6">
-            <h2 class="w3-xlarge"><b>Proyecto E-Book</b></h2>
-            <strong class="w3-large w3-text-blue"><b> REENCUENTRO CON LAS NUEVAS GENERACIONES POST COVID 19</b></strong>
-            <p>
-                <b class="w3-large">Breve descripción del libro:</b><br>
-                ¿Cómo conectar con las nuevas generaciones post COVID 19? ¿Cuáles serán los nuevos desafíos que nos traerá el nuevo escenario en trabajo con las nuevas generaciones? Este libro nos presenta una cosmovisión desde una perspectiva psicosocial y teológica de lo que podrían ser los posibles escenarios y modos de abordar en la conexión con los jóvenes luego de superada la pandemia. 
-                <br><br>
-                Un vistazo a las nuevas generaciones pre COVID 19, los efectos psicosociales en tiempo de cuarentena, el proceso de ampliar una mayor compresión de la nueva realidad para hacer ser efectivos y eficientes en el abordaje de los jóvenes para ayudarles a desarrollar su potencial integralmente. Anticipar los nuevos desafíos de este escenario post COVID 19, conectando con las nuevas generaciones de forma autentica para promover una metamorfosis total que afecte positivamente el futuro de nuestras naciones. 
-                <br><br>
-                Puedes descargar este libro que será útil para los jóvenes, líderes juveniles, docentes, profesores universitarios, padres y todas las organizaciones que trabajan en medio de las comunidades de las nuevas generaciones. Luego de leerlo déjanos saber tu opinión del libro, colgando tu comentario en esta página. 
-                <br><br>
-                GoMUF está trabajando en otros materiales y recursos útiles para todos! 
-            </p>
-            <p>
-                <i><strong class="w3-large">Autor: Darío Ortega </strong></i> &nbsp;
-                <a href="https://www.facebook.com/darluz.mufvalencia" target="_blank"><i class="fa fa-facebook w3-xlarge w3-text-blue"></i></a>
-                <a href="https://www.instagram.com/darluz.ortega/" target="_blank"><i class="fa fa-instagram w3-xlarge w3-text-purple"></i></a>
-                <a href="https://wa.link/g2z66d" target="_blank"><i class="fa fa-whatsapp w3-xlarge w3-text-green"></i></a>
-            </p>
-            
-        </div>
-        <div class="w3-col l4 m6">
-            <img src="assets/app/img/libro_mini.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
 
-            <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small w3-right" onclick="document.getElementById('download').style.display='block'">
-                <i class="fa fa-download"></i> Adquiere una copia del libro.
-            </button>
+<style>
+    .proyectos_mySlides {display:none;}
+</style>
 
-            <div class="w3-center w3-hide-large w3-hide-medium">
-                <button class="w3-button w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
-                    <i class="fa fa-download"></i> Adquiere una copia del libro.
-                </button>
-                <img src="assets/app/img/libro_mini.jpeg" class="w3-image w3-margin-top" width="335" height="471">
-            </div>
-        </div>
+<!-- Proyecto Section -->
+<div class="w3-light-grey w3-center w3-container" id="proyectos">
+    <div class="w3-padding w3-container w3-section">
+        <strong class="w3-xlarge w3-text-amber" style="text-shadow:1px 1px 0 black">
+            ¡GoMUF está trabajando en otros materiales y recursos útiles para todos!
+        </strong>
     </div>
+    <div class="w3-row w3-content w3-display-container">
+        <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
+            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
+                <b>Bunker <br> <span class="w3-large">PODCAST | Live Stream</span></b>
+            </a>
+        </div>
+
+        <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
+            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="ebooks/">
+                <b>Proyecto <br>E-Books</b>
+            </a>
+        </div>
+
+        <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
+            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
+                <b>MUF <br>Digital</b>
+            </a>
+        </div>
+
+        <div class="w3-container w3-section w3-col lg-6 m6 s12 proyectos_mySlides">
+            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="bombona/">
+                <b>Proyecto Niños<br> Bomboná</b>
+            </a>
+        </div>
+
+        <div class="w3-container w3-section w3-col lg-6 m6 s12 proyectos_mySlides">
+            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red">
+                <b>Proyecto PEPE<br> Network</b>
+            </a>
+        </div>
+
+        <!-- mostrar todos los elementos -->
+        <button class="w3-button w3-hover-none w3-display-bottom w3-block" id="proyectos_arrow-all" onclick="proyectos_showAll()">
+           Mostrar todos <b>&#8650;</b>
+        </button>
+
+        <!-- prev and next control-->
+        <button class="w3-button w3-hover-none w3-display-left" id="proyectos_arrow-prev" onclick="proyectos_plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-hover-none w3-display-right" id="proyectos_arrow-next" onclick="proyectos_plusDivs(1)">&#10095;</button>
+
+    </div>
+    <br><br>
 </div>
+
+<script>
+    var proyectos_slideIndex = 1;
+    proyectos_showDivs(proyectos_slideIndex);
+
+    function proyectos_plusDivs(n) {
+        proyectos_showDivs(proyectos_slideIndex += n);
+    }
+
+    function proyectos_showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("proyectos_mySlides");
+        if (n > x.length) {proyectos_slideIndex = 1}
+        if (n < 1) {proyectos_slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[proyectos_slideIndex-1].style.display = "block";
+    }
+
+    function proyectos_showAll() {
+        var arrow_prev = document.getElementById("proyectos_arrow-prev");
+        var arrow_next = document.getElementById("proyectos_arrow-next");
+        var arrow_all = document.getElementById("proyectos_arrow-all");
+
+        var x = document.getElementsByClassName("proyectos_mySlides");
+
+        console.log(arrow_all.innerHTML);
+
+        if(arrow_next.style.display === "none"){
+            proyectos_plusDivs(0);
+            arrow_prev.style.display = "block";
+            arrow_next.style.display = "block";
+            arrow_all.innerHTML = "Mostrar todos <b>&#8650;</b>";
+
+        } else {
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "block";
+            }
+            arrow_prev.style.display = "none";
+            arrow_next.style.display = "none";
+            arrow_all.innerHTML = "Ocultar <b>&#8648;</b>";
+        }
+    }
+</script>
 
 <!-- Modal -->
 <div id="download" class="w3-modal w3-animate-opacity">
@@ -142,54 +202,104 @@
 
     <div class="w3-row-padding w3-grayscale">
         <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <img src="assets/app/img/pastor0.png" alt="Dario Ortega" style="width:100%" class="w3-image w3-round">
-            <h3>Darío Ortega</h3>
-            <p class="w3-opacity">CEO GOMUF</p>
-            <p class="w3-large">
-                Terapeuta Psicosocial<br>
-                Teólogo<br>
-                Coaching de Liderazgo<br>
-                Docente Universitario<br>
-                Líder Chapel Navegantes del Magallanes (LBPV)<br>
-                Coordinador FCA Carabobo<br>
-                Miembro del equipo pastoral IB MUF Valencia
-            </p>
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Darío Ortega</p>
+                <img src="assets/app/img/team/dario.png" alt="Dario Ortega" class="w3-image w3-round">
+                <p class="w3-large w3-opacity">CEO GOMUF</p>
+                <div class="w3-section w3-left-align">
+                    &#8227; Terapeuta Psicosocial<br>
+                    &#8227; Teólogo<br>
+                    &#8227; Coaching de Liderazgo<br>
+                    &#8227; Docente Universitario<br>
+                    &#8227; Líder Chapel Navegantes del Magallanes (LBPV)<br>
+                    &#8227; Coordinador FCA Carabobo<br>
+                    &#8227; Miembro del Equipo Pastoral IB MUF Valencia
+                </div>
+            </div>
         </div>
 
         <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <img src="assets/app/img/pastora.jpeg" alt="Luzmery Albornoz de Ortega" style="width:100%" class="w3-image w3-round">
-            <h3>Luzmery de Ortega</h3>
-            <p class="w3-opacity">Directora GOMUF</p>
-            <p class="w3-large">
-                Psicóloga<br>
-                Terapeuta Psicosocial<br>
-                Teólogo<br>
-                Docente Universitaria<br>
-                Líder Chapel Navegantes del Magallanes (LBPV)<br>
-                Miembro del Equipo Pastoral IB MUF Valencia
-            </p>
-        </div>
-
-        <div class="w3-row w3-hide-small w3-hide-large"> <br><br></div>
-
-        <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <img src="assets/app/img/santiago.jpg" alt="Santiago Ortega" style="width:100%" class="w3-image w3-round">
-            <h3>Santiago Ortega</h3>
-            <p class="w3-opacity">Logística</p>
-            <p class="w3-large">
-                Productor Musical
-            </p>
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Luzmery de Ortega</p>
+                <img src="assets/app/img/team/luzmery.jpeg" alt="Luzmery Albornoz de Ortega" class="w3-image w3-round">
+                <p class="w3-large w3-opacity">Directora GOMUF</p>
+                <div class="w3-section w3-left-align">
+                    &#8227; Psicóloga<br>
+                    &#8227; Terapeuta Psicosocial<br>
+                    &#8227; Teólogo<br>
+                    &#8227; Docente Universitaria<br>
+                    &#8227; Líder Chapel Navegantes del Magallanes (LBPV)<br>
+                    &#8227; Miembro del Equipo Pastoral IB MUF Valencia
+                </div>
+            </div>
         </div>
 
         <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <img src="assets/app/img/genesis1.jpeg" alt="Génesis Ortega" style="width:100%" class="w3-image w3-round">
-            <h3>Génesis Ortega</h3>
-            <p class="w3-opacity">Community Manager</p>
-            <p class="w3-large">
-                Escritora<br>
-                Líder Universitario<br>
-                Diseñador Grafico<br>
-            </p>
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Santiago Ortega</p>
+                <img src="assets/app/img/team/santiago.jpg" alt="Santiago Ortega" class="w3-image w3-round">
+                <p class="w3-large w3-opacity">Logística</p>
+                <div class="w3-section w3-left-align">
+                    Productor Musical
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-col l3 m6 s12 w3-margin-bottom">
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Génesis Ortega</p>
+                <img src="assets/app/img/team/genesis.jpeg" alt="Génesis Ortega" class="w3-image w3-round">
+                <p class="w3-large w3-opacity">Community Manager</p>
+                <div class="w3-section w3-left-align">
+                    &#8227; Escritora<br>
+                    &#8227; Líder Universitario<br>
+                    &#8227; Diseñador Grafico
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding w3-grayscale">
+        <div class="w3-col l1 w3-margin-bottom"></div>
+
+        <div class="w3-col l2 m4 s12 w3-margin-bottom">
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Jesús Izaguirre</p>
+                <img src="assets/app/img/team/jesus.jpg" alt="Jesús Ernesto Izaguirre"  class="w3-image w3-round" width="350" height="500">
+                <p class="w3-large w3-opacity">Coordinador de Proyecto <br> MUF - UJAP</p>
+            </div>
+        </div>
+
+        <div class="w3-col l2 m4 s12 w3-margin-bottom">
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Clarismar de Sarría</p>
+                <img src="assets/app/img/team/clarismar.jpg" alt="Clarismar de Sarría"  class="w3-image w3-round" width="350" height="500">
+                <p class="w3-large w3-opacity">Equipo <br>Pastoral MUF <br> Naguanagua - Venezuela</p>
+            </div>
+        </div>
+
+        <div class="w3-col l2 m4 s12 w3-margin-bottom">
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Leonardo Sarría</p>
+                <img src="assets/app/img/team/leonardo.jpg" alt="Leonardo Sarría"  class="w3-image w3-round" width="350" height="500">
+                <p class="w3-large w3-opacity">Equipo <br>Pastoral MUF <br> Naguanagua - Venezuela</p>
+            </div>
+        </div>
+
+        <div class="w3-col l2 m4 s12 w3-margin-bottom">
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Natalia Montoya</p>
+                <img src="assets/app/img/team/natalia.jpg" alt="Natalia Montoya"  class="w3-image w3-round" width="350" height="500">
+                <p class="w3-large w3-opacity">Saint-Martin <br> Coordinadora Logística Internacional</p>
+            </div>
+        </div>
+
+        <div class="w3-col l2 m4 s12 w3-margin-bottom">
+            <div class="w3-container w3-center">
+                <p class="w3-xlarge">Sylvania Vasquez</p>
+                <img src="assets/app/img/team/sylvania.jpg" alt="Sylvania Vasquez Covault"  class="w3-image w3-round" width="350" height="500">
+                <p class="w3-large w3-opacity">Coordinadora Logística Proyectos</p>
+            </div>
         </div>
     </div>
 
@@ -202,7 +312,7 @@
         <b class="w3-text-white">Campus de Acción</b><br>
         <i class="w3-text-blue">Esfera Educación</i>
     </h3>
-    
+
     <div class="w3-row w3-row-padding w3-center w3-text-red">
         <div class="w3-col l2 m6 s6 w3-margin-bottom">
             <div class="w3-display-container nombre_casa_estudio">
@@ -326,7 +436,7 @@
     <div class="w3-row-padding w3-center margin-top">
         <div class="w3-col l4 m4 s12 w3-margin-top">
             <div class="w3-card">
-                <img src='assets/app/img/foto2.jpeg' alt="Luzmery Albornoz de Ortega" style="width:100%">
+                <img src='assets/app/img/pastores.jpeg' alt="Luzmery Albornoz de Ortega" style="width:100%">
             </div>
         </div>
 

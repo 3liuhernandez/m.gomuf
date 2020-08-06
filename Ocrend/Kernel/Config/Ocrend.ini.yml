@@ -12,7 +12,7 @@ database:
     mysql: 
       host: localhost
       user: root
-      pass:
+      pass: 12345
       name: gomuf
       port: default
       socket: default
@@ -25,7 +25,7 @@ mailer:
   user: contacto.gomuf@gmail.com
   pass: 123456R*e
   port: 587
-  logo: 
+  logo:
 
 # Configuración de twig
 twig:
@@ -39,7 +39,7 @@ twig:
 build:
   production: true
   name: Gomuf
-  url: http://localhost/m.gomuf/
+  url: http://localhost/m.gomuf.com/
   timezone: America/Caracas
   version: 3.0.1
 
@@ -58,5 +58,5 @@ api:
 
 # Configuración de ruta
 router:
-  ssl: false
-  path: localhost/m.gomuf/
+  ssl: true
+  path: localhost/m.gomuf.com/
