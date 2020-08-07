@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head><meta charset="gb18030">
-    {{ base_assets()|raw }}
-    <title>{{ config.build.name }}</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/vendor/ladda/ladda.min.css">
-    <link rel="stylesheet" href="assets/app/css/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/app/css/w3-theme-black.css">
-    <link rel="stylesheet" href="assets/vendor/toastr/build/toastr.min.css">
-    <link rel="stylesheet" href="assets/app/css/app.css">
-    <link rel="stylesheet" href="assets/app/css/w3-win8-color.css">
-    {% block appHeader %}{% endblock %}
-    <style>
-        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-        body {font-size: 16px;}
-    </style>
-</head>
-<body class="w3-content w3-blue" style="max-width: 1400px;">
-
     <!-- Navbar (sit on top) -->
     <div class="w3-top topnav" style="width: 100%">
         <div class="w3-bar w3-white w3-padding w3-card">
@@ -31,19 +8,19 @@
             <!-- Float links to the right. Hide them on small screens -->
             <!-- Sidebar -->
             <div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none;z-index:5; right: 0px;" id="sidetop">
-                <p class="w3-large w3-center w3-text-green"><b>Proyecto <br> E-Books</b></p>
+                <p class="w3-large w3-center w3-text-green"><b>Biblioteca Virtual <br>Metamorfosis Universitaria</b></p>
                 <hr>
                 <a href="ebooks/#cyberia" class="w3-bar-item w3-button w3-hover-none w3-small" data-item="cyberia">Misiones en Cyberia</a>
                 <a href="ebooks/#cuarentena" class="w3-bar-item w3-button w3-hover-none w3-small" data-item="cuarentena">En Cuarentena</a>
                 <a href="ebooks/#post-covid" class="w3-bar-item w3-button w3-hover-none w3-small" data-item="post-covid">Post Covid 19</a>
                 <br><br>
                 <hr>
-                <p class="w3-center w3-text-green"><b>Enlaces Externos</b></p>
-                <a href="ebooks/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="cyberia">
-                    <b>Proyecto E-Books</b>
+
+                <a href="ebooks/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="ebooks">
+                    <b>Biblioteca Virtual</b>
                 </a>
 
-                <a href="bombona/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="cuarentena">
+                <a href="bombona/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="bombona">
                     <b>Niños Bomboná</b>
                 </a>
                 <hr>
@@ -81,35 +58,6 @@
 
 <header class="w3-container w3-center w3-padding-32 w3-white" style="margin-top: 10%">
     <img src="assets/app/img/logo.png" class="w3-image" width="200" height="200">
-    <h1 class="w3-xlarge"><b class="w3-text-green">Proyecto E-Books</b></h1>
+    <h1 class="w3-xlarge"><b class="w3-text-green">Biblioteca Virtual <br>Metamorfosis Universitaria</b></h1>
     <hr style="width: 50%; margin: 1% auto; color: blue">
 </header>
-
-
-{% block appBody %}{% endblock %}
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
-  <p class="w3-medium">Powered by <a href="https://www.facebook.com/darluz.mufvalencia" target="_blank" class="w3-hover-text-green">GoMuf Developers</a></p>
-</footer>
-
-<script>
-function w3_open() {
-document.getElementById("sidetop").style.display = "block";
-document.getElementById("overlay_navtop").style.display = "block";
-}
-
-function w3_close() {
-document.getElementById("sidetop").style.display = "none";
-document.getElementById("overlay_navtop").style.display = "none";
-}
-</script>
-
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/ladda/spin.min.js"></script>
-<script src="assets/vendor/ladda/ladda.min.js"></script>
-<script src="assets/vendor/toastr/build/toastr.min.js"></script>
-<script src="assets/jscontrollers/overall/toast.js"></script>
-{% block appFooter %}{% endblock %}
-</body>
-</html>

@@ -23,42 +23,78 @@ a{
     height: 100%;
     background-color: rgba(0, 0, 0, .6);
 }
-/*
-.banner{
-    background-image: url('../img/logo.jpg');
-    background-size: 190px auto;
-    background-position: left;
-    background-position-y: 30px;
-    background-position-x: 20px;
-    background-repeat: no-repeat;
-}
-*/
+
 .bg-cover{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
 }
-.black-background{
-    background-color: #f1f1f1;
+.color-background{
     padding: 10px;
     border-radius: 8px;
     opacity: 0.75;
     transition: all .3s;
 }
 
-.black-background:hover{
+.black-background{
+    background-color: #f1f1f1;
+}
+
+.gray-background{
+    background-color: #f1f1f185 ;
+}
+
+.color-background:hover{
     opacity: 1;
 }
 #nosotros{
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     min-height: 700px;
-    background-image: url('assets/app/img/fondo.jpg');
-    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/app/img/fondo.jpg');*/
+    background-image: url('../img/fondo.jpg');
+    background-position: bottom;
+}
+
+#staff .w3-row-padding .w3-col{
+    float: left !important;
+    position: relative;
 }
 
 .nombre_casa_estudio{
     font-weight: 600;
     padding: 5% !important;
+}
+
+/* alinear los iconos y el texot de la seccion de contactos*/
+#contact div.w3-panel div.w3-large i.fa {
+    width: 30px;
+    text-align: center;
+}
+
+#contact div.w3-panel div.w3-large a {
+    text-decoration: underline;
+}
+
+
+/* bomboná section*/
+#somos {
+    background: url('../img/ninos-bombona/bg412.jpg') bottom no-repeat;
+    margin-top: 0 !important;
+}
+#programa {
+    background: url('../img/ninos-bombona/bg_bus.jpg') center no-repeat;
+    margin-top: 3% !important;
+}
+#somos, #programa{
+    background-size: cover;
+    padding: 5%;
+}
+#programa div.w3-section {
+    text-align: center;
+}
+
+#sede {
+    background: url('../img/ninos-bombona/bg_pedazo.jpg') center;
+    margin-top: 0px !important;
 }

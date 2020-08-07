@@ -1,97 +1,79 @@
-{% extends 'overall/layout_bombona' %}
+{% extends 'overall/layout' %}
 {% block appBody %}
-<style>
-    #somos {
-        background: url('assets/app/img/ninos-bombona/bg412.jpg') bottom no-repeat;
-        margin-top: 0 !important;
-    }
-    #programa {
-        background: url('assets/app/img/ninos-bombona/bg_bus.jpg') center no-repeat;
-        margin-top: 3% !important;
-    }
-    #somos, #programa{
-        background-size: cover;
-        padding: 5%;
-    }
-    #programa div.w3-section {
-        text-align: center;
-    }
 
-    #sede {
-        background: url('assets/app/img/ninos-bombona/bg_pedazo.jpg') center;
-        margin-top: 0px !important;
-    }
-</style>
-<div class="w3-section w3-container w3-padding-64 w3-xlarge w3-center w3-wide" id="somos">
-    <b class="w3-text-pink">
-        <span class="color-background gray-background" style="opacity: 1">¡Somos un proyecto sin fines de lucro conformado por voluntarios de la I.B. Misión Última Frontera Valencia!</span>
-        <br><br>
-        <strong class="w3-text-blue color-background gray-background" style="opacity: 1">
-            La cual tiene como Visión:
+    <!-- incluyendo el header -->
+    {% include 'overall/includes/bombona' %}
+
+    <div class="w3-section w3-container w3-padding-64 w3-xlarge w3-center w3-wide" id="somos">
+        <b class="w3-text-pink">
+            <span class="color-background gray-background" style="opacity: 1">¡Somos un proyecto sin fines de lucro conformado por voluntarios de la I.B. Misión Última Frontera Valencia!</span>
+            <br><br>
+            <strong class="w3-text-blue color-background gray-background" style="opacity: 1">
+                La cual tiene como Visión:
+                <br>
+                Ver a Valencia, Venezuela y el mundo liderado por personas comprometidas con Cristo.
+            </strong>
+        </b>
+    </div>
+
+    <div class="w3-section w3-container w3-padding-64" id="coordinadora">
+        <div class="w3-col l4 m4 s12">
+            <img src="assets/app/img/ninos-bombona/coordinadora.jpg" class="w3-image w3-round" width="335" height="471" />
+        </div>
+        <div class="w3-col l6 m6 s12">
+            <b class="w3-xlarge w3-left">
+                Marisol Rivas<br>
+                Misionera MUF Valencia<br>
+                Coordinadora <br>Proyecto Niños Bomboná
+            </b>
+        </div>
+    </div>
+
+    <div class="w3-section w3-container w3-win8-pink" id="programa">
+        <div class="w3-section w3-container w3-text-black">
+            <b class="w3-xlarge">
+                Dirigido a niños con edades <br>comprendidas entre 2 a 12 años.
+            </b>
             <br>
-            Ver a Valencia, Venezuela y el mundo liderado por personas comprometidas con Cristo.
-        </strong>
-    </b>
-</div>
-
-<div class="w3-section w3-container w3-padding-64" id="coordinadora">
-    <div class="w3-col l4 m4 s12">
-        <img src="assets/app/img/ninos-bombona/coordinadora.jpg" class="w3-image w3-round" width="335" height="471" />
+            <p class="w3-xlarge">
+                De 2 a 5 años siguiendo una rutina <br>P.E.P.E. Internacional <br>(Programa de Educación Preescolar)
+            </p>
+            <p class="w3-xlarge">
+                De 6 a 12 años según corresponde<br> a su grado primaria.
+            </p>
+            <p class="w3-xlarge color-background black-background w3-text-pink" style="text-shadow: 1px 0px black">
+                <b>En ambas edades comprenden enseñanzas académicas, cuidado personal, liderazgo y familia según los principios bíblicos.</b>
+            </p>
+        </div>
     </div>
-    <div class="w3-col l6 m6 s12">
-        <b class="w3-xlarge w3-left">
-            Marisol Rivas<br>
-            Misionera MUF Valencia<br>
-            Coordinadora <br>Proyecto Niños Bomboná
-        </b>
-    </div>
-</div>
 
-<div class="w3-section w3-container w3-win8-pink" id="programa">
-    <div class="w3-section w3-container w3-text-black">
-        <b class="w3-xlarge">
-            Dirigido a niños con edades <br>comprendidas entre 2 a 12 años.
-        </b>
-        <br>
-        <p class="w3-xlarge">
-            De 2 a 5 años siguiendo una rutina <br>P.E.P.E. Internacional <br>(Programa de Educación Preescolar)
-        </p>
-        <p class="w3-xlarge">
-            De 6 a 12 años según corresponde<br> a su grado primaria.
-        </p>
-        <p class="w3-xlarge color-background black-background w3-text-pink" style="text-shadow: 1px 0px black">
-            <b>En ambas edades comprenden enseñanzas académicas, cuidado personal, liderazgo y familia según los principios bíblicos.</b>
+    <div class="w3-section w3-container w3-center">
+        <img src="assets/app/img/ninos-bombona/emoji-laugh.png" width="200" height="471" class="w3-image w3-round" />
+        <p class="w3-xxlarge">
+            Nuestro trabajo es en <b><br>calidad de voluntariado.</b>
         </p>
     </div>
-</div>
 
-<div class="w3-section w3-container w3-center">
-    <img src="assets/app/img/ninos-bombona/emoji-laugh.png" width="335" height="471" class="w3-image w3-round" />
-    <p class="w3-xxlarge">
-        Nuestro trabajo es en <b><br>calidad de voluntariado.</b>
-    </p>
-</div>
+    <div class="w3-section w3-container" id="sede">
+        <p class="w3-center w3-xlarge w3-text-dark-gray">
+            <b>Tenemos como sede <br>La E.N.B. Batalla de Bombona. Bárbula I </b>
+        </p>
 
-<div class="w3-section w3-container" id="sede">
-    <p class="w3-center w3-xlarge w3-text-dark-gray">
-        <b>Tenemos como sede <br>La E.N.B. Batalla de Bombona. Bárbula I </b>
-    </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15703.094053253479!2d-68.02130878989917!3d10.27982429291686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4a1216a09256de48!2sEscuela%20Batalla%20de%20Bombona!5e0!3m2!1ses-419!2sve!4v1596527688524!5m2!1ses-419!2sve" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w3-left w3-padding-large w3-block"></iframe>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15703.094053253479!2d-68.02130878989917!3d10.27982429291686!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4a1216a09256de48!2sEscuela%20Batalla%20de%20Bombona!5e0!3m2!1ses-419!2sve!4v1596527688524!5m2!1ses-419!2sve" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class="w3-left w3-padding-large w3-block"></iframe>
+        <p class="w3-center-align w3-text-purple w3-xlarge">
+            <br>
+            80 niños y adolescentes de 5 comunidades aledañas a dicha institución son asistidos 3 veces por semana, 21/2h académicas por día y su respectiva ración alimenticia (cena)
+        </p>
 
-    <p class="w3-center-align w3-text-purple w3-xlarge">
-        <br>
-        80 niños y adolescentes de 5 comunidades aledañas a dicha institución son asistidos 3 veces por semana, 21/2h académicas por día y su respectiva ración alimenticia (cena)
-    </p>
+        <p class="w3-block w3-xlarge w3-text-blue-grey">
+            En la actualidad con la situación de la pandemia actuamos con métodos a distancia y ver algunas necesidades primordiales y en vista de la situación actual de nuestro país hemos habilitado un hogar para preparar los alimentos, y no solo a los 80 niños sino también a 23 adultos que son sus propios abuelos en algunos casos.
+        </p>
+    </div>
 
-    <p class="w3-block w3-xlarge w3-text-blue-grey">
-        En la actualidad con la situación de la pandemia actuamos con métodos a distancia y ver algunas necesidades primordiales y en vista de la situación actual de nuestro país hemos habilitado un hogar para preparar los alimentos, y no solo a los 80 niños sino también a 23 adultos que son sus propios abuelos en algunos casos.
-    </p>
-</div>
-
-<div class="w3-section w3-container w3-padding-64 w3-center w3-display-container w3-white">
-    <p class="w3-xlarge w3-col l8 m8 s12">De martes a domingo estamos sirviendo 1 taza de avena para el desayuno y un almuerzo con los requerimientos básicos nutricionales.</p>
-    <img src="assets/app/img/ninos-bombona/bg_kids_eating.jpg" width="200" height="350" class="w3-image w3-round w3-display-middleright" />
-</div>
+    <div class="w3-section w3-container w3-padding-64 w3-center w3-display-container w3-white">
+        <p class="w3-xlarge w3-col l8 m8 s12">De martes a domingo estamos sirviendo 1 taza de avena para el desayuno y un almuerzo con los requerimientos básicos nutricionales.</p>
+        <img src="assets/app/img/ninos-bombona/bg_kids_eating.jpg" width="200" height="350" class="w3-image w3-round w3-display-middleright" />
+    </div>
 
 {% endblock %}

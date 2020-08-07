@@ -14,118 +14,44 @@
     <link rel="stylesheet" href="assets/app/css/w3-win8-color.css">
     {% block appHeader %}{% endblock %}
     <style>
-    body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
-    body {font-size: 16px;}
-    img {margin-bottom: -8px;}
-    .mySlides {display: none;}
-
-    #sidetop a{
-        margin:2%;
-    }
+        body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+        body {font-size: 16px;}
+        #sidetop a{
+            margin:2%;
+        }
     </style>
 </head>
-<body class="w3-content w3-blue" style="max-width: 1400px">
+<body class="w3-content w3-blue" style="max-width: 1600px">
 
     <!-- Navbar (sit on top) -->
-    <div class="w3-top topnav" style="width: 100%">
-        <div class="w3-bar w3-white w3-padding w3-card">
-            <a href="home" class="w3-bar-item w3-button"><b>GOMUF</b></a>
-
-            <button class="w3-button w3-white w3-large w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
-
-            <!-- Float links to the right. Hide them on small screens -->
-            <!-- Sidebar -->
-            <div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none;z-index:5; right: 0px;" id="sidetop">
-                <p class="w3-large w3-center"><b>Proyecto Global</b></p>
-                <p class="w3-large w3-center"><b><i>Metamorfosis Universitaria Fraternity</i></b></p>
-                <hr>
-                <!--<button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>-->
-                <a href="#nosotros" class="w3-bar-item w3-button w3-small" data-item="nosotros">Nosotros</a>
-                <a href="#valores" class="w3-bar-item w3-button w3-small" data-item="valores">Valores</a>
-                <a href="#staff" class="w3-bar-item w3-button w3-small" data-item="staff">Staff</a>
-                <a href="#campus_accion" class="w3-bar-item w3-button w3-small" data-item="campus_accion">Campus de Acción</a>
-                <a href="#alianzas" class="w3-bar-item w3-button w3-small" data-item="staff">Alianzas</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-small" data-item="contact">Contacto</a>
-
-                <hr>
-                <p class="w3-center w3-text-green"><b>Enlaces Externos</b></p>
-                <a href="ebooks/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="cyberia">
-                    <b>Proyecto E-Books</b>
-                </a>
-
-                <a href="bombona/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="cuarentena">
-                    <b>Niños Bomboná</b>
-                </a>
-                <hr>
-                <!-- aside bottom -->
-                <div class="w3-row w3-display-middlebottom">
-                    <button class="w3-button w3-inline">
-                        <a href="mailto:contacto.gomuf@gmail.com" target="_blank">
-                            <i class="fa fa-envelope-o w3-text-blue"></i>
-                        </a>
-                    </button>
-                    <button class="w3-button">
-                        <a href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
-                            <i class="fa fa-facebook w3-text-blue"></i>
-                        </a>
-                    </button>
-                    <button class="w3-button">
-                        <a href="https://www.instagram.com/mufvalencia/" target="_blank">
-                            <i class="fa fa-instagram w3-text-blue"></i>
-                        </a>
-                    </button>
-                </div>
-                <br>
-            </div>
-
-            <div class="w3-right w3-hide-small w3-hide-medium w3-medium">
-                <a href="#nosotros" class="w3-bar-item w3-button" data-item="nosotros">Nosotros</a>
-                <a href="#valores" class="w3-bar-item w3-button" data-item="valores">Valores</a>
-                <a href="#staff" class="w3-bar-item w3-button" data-item="staff">Staff</a>
-                <a href="#campus_accion" class="w3-bar-item w3-button" data-item="campus_accion">Campus de Acción</a>
-                <a href="#alianzas" class="w3-bar-item w3-button" data-item="staff">Alianzas</a>
-                <a href="#contact" class="w3-bar-item w3-button" data-item="contact">Contacto</a>
-            </div>
-
-            <!-- overlay -->
-            <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="overlay_navtop"></div>
-        </div>
-    </div>
-
-    <header class="w3-container w3-center w3-padding-32 w3-white" style="margin-top: 10%">
-        <img src="assets/app/img/logo.png" class="w3-image" width="200" height="200">
-        <h1 class="w3-xlarge"><b>Proyecto Global</b></h1>
-        <h3 class="w3-large"><b><i>Metamorfosis Universitaria Fraternity</i></b></h3>
-    </header>
-
-{% include 'overall/banner' %}
+    <!-- se incluyen en el home de cada seccion -->
 
 
 {% block appBody %}{% endblock %}
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
-    <p class="w3-medium">Powered by <a href="https://www.facebook.com/darluz.mufvalencia" target="_blank" class="w3-hover-text-green">GoMuf Developers</a></p>
-</footer>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
+        <p class="w3-medium">Powered by <a href="https://www.facebook.com/darluz.mufvalencia" target="_blank" class="w3-hover-text-green">GoMuf Developers</a></p>
+    </footer>
 
-<script>
-function w3_open() {
-document.getElementById("sidetop").style.display = "block";
-document.getElementById("overlay_navtop").style.display = "block";
-}
+    <script>
+        function w3_open() {
+            document.getElementById("sidetop").style.display = "block";
+            document.getElementById("overlay_navtop").style.display = "block";
+        }
 
-function w3_close() {
-document.getElementById("sidetop").style.display = "none";
-document.getElementById("overlay_navtop").style.display = "none";
-}
-</script>
+        function w3_close() {
+            document.getElementById("sidetop").style.display = "none";
+            document.getElementById("overlay_navtop").style.display = "none";
+        }
+    </script>
 
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/ladda/spin.min.js"></script>
-<script src="assets/vendor/ladda/ladda.min.js"></script>
-<script src="assets/vendor/toastr/build/toastr.min.js"></script>
-<script src="assets/jscontrollers/overall/toast.js"></script>
-<script src="assets/app/js/app.js"></script>
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/ladda/spin.min.js"></script>
+    <script src="assets/vendor/ladda/ladda.min.js"></script>
+    <script src="assets/vendor/toastr/build/toastr.min.js"></script>
+    <script src="assets/jscontrollers/overall/toast.js"></script>
+    <script src="assets/app/js/app.js"></script>
 {% block appFooter %}{% endblock %}
 </body>
 </html>

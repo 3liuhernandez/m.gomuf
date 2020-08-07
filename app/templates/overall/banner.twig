@@ -1,54 +1,4 @@
 <style>
-
-.bg-image {
-  /* The image used */
-  background-image: url("assets/app/img/libro.jpg");
-  
-  /* Full height */
-  height: 512px;
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
-<header class="w3-display-container w3-center w3-hide">
-    <div class="bg-image"></div>
-    <div class="mySlides w3-animate-opacity">
-
-        <!-- vista para small, ocultando medium -->
-        <div class="w3-display-bottommiddle w3-padding w3-hide-medium w3-hide-large" style="width:75%">
-            <div class="w3-indigo w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-                <p class="w3-small">Descarga el E-Book aquí</p>
-                <hr class="w3-opacity">
-                <!--<p>Super simple installment: free of charge</p>-->
-                <p>
-                    <button class="w3-button w3-block w3-green w3-hover-white w3-round w3-hover-text-green" onclick="document.getElementById('download').style.display='block'">
-                        Descargar <i class="fa fa-file"></i>
-                    </button>
-                </p>
-            </div>
-        </div>
-
-        <!-- vista para medium, ocultando small -->
-        <div class="w3-display-left w3-padding w3-hide-small" style="width:45%">
-            <div class="w3-indigo w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-                <p class="">Descarga el E-Book aquí</p>
-                <hr class="w3-opacity">
-                <!--<p>Super simple installment: free of charge</p>-->
-                <p>
-                    <button class="w3-button w3-block w3-green w3-hover-white w3-round w3-hover-text-green" onclick="document.getElementById('download').style.display='block'">
-                        Descargar <i class="fa fa-file"></i>
-                    </button>
-                </p>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<style>
 .banner-image1 {
     background-image: url("assets/app/img/libros/llamado_misionero_ciberia.jpg");
     background-position: center;
@@ -256,7 +206,10 @@
     <div class="banner_slides" onclick="banner_enlace('ebooks/#cyberia');">
         <div class="banner-image banner-image1"></div>
         <div class="banner-text">
-            <b class="w3-xlarge w3-green">Proyecto E-Book</b><br><br>
+            <b class="w3-xlarge w3-green">
+                Biblioteca Virtual <br> <span class="w3-medium">Metamorfosis Universitaria</span>
+            </b>
+            <br><br>
             <b class="w3-xlarge">Llamado Misionero A Cyberia</b><br>
             <p class="w3-large">Dario Ortega</p>
         </div>
@@ -265,7 +218,10 @@
     <div class="banner_slides" onclick="banner_enlace('ebooks/#cuarentena');">
         <div class="banner-image banner-image2"></div>
         <div class="banner-text">
-            <b class="w3-xlarge w3-red">Proyecto E-Book</b><br><br>
+            <b class="w3-xlarge w3-red">
+                Biblioteca Virtual <br> <span class="w3-medium">Metamorfosis Universitaria</span>
+            </b>
+            <br><br>
             <b class="w3-xlarge">Lo Que Aprendí En Esta Cuarentena</b><br>
             <p class="w3-large">Varios Autores</p>
         </div>
@@ -274,7 +230,10 @@
     <div class="banner_slides" onclick="banner_enlace('ebooks/#post-covid');">
         <div class="banner-image banner-image3"></div>
         <div class="banner-text">
-            <b class="w3-xlarge w3-blue">Proyecto E-Book</b><br><br>
+            <b class="w3-xlarge w3-blue">
+                Biblioteca Virtual <br> <span class="w3-medium">Metamorfosis Universitaria</span>
+            </b>
+            <br><br>
             <b class="w3-xlarge">Reencuentro Con <br>Las Nuevas Generaciones <br>Post Covid-19</b><br>
             <p class="w3-large">Dario Ortega</p>
         </div>
@@ -306,7 +265,12 @@
 <!-- news section -->
 <!-- news section -->
 <div class="w3-section w3-container w3-green" id="news" style="margin-top: 0px !important; margin-bottom: 0px !important">
-    <p class="w3-xlarge w3-center">¡Buenas Nuevas!</p>
+    <div class="w3-center w3-padding w3-blue w3-margin">
+        <b class=""> GOMUF's News </b>
+    </div>
+
+    <p class="w3-xlarge w3-center w3-block">¡Buenas Nuevas!</p>
+
     <div class="w3-row w3-section w3-container">
         <div class="w3-col l6 m6 s12">
             <p class="w3-large w3-center">
@@ -344,7 +308,7 @@
 <div id="newsMyModal" class="newsModal">
     <span class="close cursor" onclick="closeModal()">&times;</span>
     <div class="news-modal-content">
-        <b class="w3-large w3-center w3-top"> <br>News's Gallery</b>
+        <b class="w3-large w3-center w3-top"> <br>News Gallery</b>
         <div class="newsMySlides">
             <div class="numbertext">1 / 4</div>
             <img src="assets/app/img/news/casa1.png">

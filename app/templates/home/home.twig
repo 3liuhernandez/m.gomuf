@@ -1,568 +1,547 @@
 {% extends 'overall/layout' %}
 {% block appBody %}
 
-<style>
-    .proyectos_mySlides {display:none;}
-</style>
+    <!-- incluyendo el header al home -->
+    {% include 'overall/includes/home' %}
 
-<!-- Proyecto Section -->
-<div class="w3-light-grey w3-center w3-container" id="proyectos">
-    <div class="w3-padding w3-container w3-section">
-        <strong class="w3-xlarge w3-text-amber" style="text-shadow:1px 1px 0 black">
-            ¡GoMUF está trabajando en otros materiales y recursos útiles para todos!
-        </strong>
+    <style>
+        .proyectos_mySlides {display:none;}
+    </style>
+
+    <!-- Proyecto Section -->
+    <div class="w3-light-grey w3-center w3-container" id="proyectos">
+        <div class="w3-padding w3-container w3-section">
+            <strong class="w3-xlarge w3-text-amber" style="text-shadow:1px 1px 0 black">
+                ¡GoMUF está trabajando en otros materiales y recursos útiles para todos!
+            </strong>
+        </div>
+        <div class="w3-row w3-content w3-display-container">
+            <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
+                <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
+                    <b>Bunker <br> <span class="w3-large">PODCAST | Live Stream</span></b>
+                </a>
+            </div>
+
+            <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
+                <a href="ebooks/" class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red">
+                    <b>Biblioteca Virtual <br> <span class="w3-large">Metamorfosis Universitaria</span></b>
+                </a>
+            </div>
+
+            <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
+                <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
+                    <b>MUF <br>Digital</b>
+                </a>
+            </div>
+
+            <div class="w3-container w3-section w3-col lg-6 m6 s12 proyectos_mySlides">
+                <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="bombona/">
+                    <b>Proyecto Niños<br> Bomboná</b>
+                </a>
+            </div>
+
+            <div class="w3-container w3-section w3-col lg-6 m6 s12 proyectos_mySlides">
+                <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red">
+                    <b>Proyecto PEPE<br> Network</b>
+                </a>
+            </div>
+
+            <!-- mostrar todos los elementos -->
+            <button class="w3-button w3-hover-none w3-display-bottom w3-block" id="proyectos_arrow-all" onclick="proyectos_showAll()">
+            Mostrar todos <b>&#8650;</b>
+            </button>
+
+            <!-- prev and next control-->
+            <button class="w3-button w3-hover-none w3-display-left" id="proyectos_arrow-prev" onclick="proyectos_plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-hover-none w3-display-right" id="proyectos_arrow-next" onclick="proyectos_plusDivs(1)">&#10095;</button>
+
+        </div>
+        <br><br>
     </div>
-    <div class="w3-row w3-content w3-display-container">
-        <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
-            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
-                <b>Bunker <br> <span class="w3-large">PODCAST | Live Stream</span></b>
-            </a>
-        </div>
 
-        <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
-            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="ebooks/">
-                <b>Proyecto <br>E-Books</b>
-            </a>
-        </div>
+    <script>
+        var proyectos_slideIndex = 1;
+        proyectos_showDivs(proyectos_slideIndex);
 
-        <div class="w3-container w3-section w3-col lg-4 m4 s12 proyectos_mySlides">
-            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
-                <b>MUF <br>Digital</b>
-            </a>
-        </div>
-
-        <div class="w3-container w3-section w3-col lg-6 m6 s12 proyectos_mySlides">
-            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red" href="bombona/">
-                <b>Proyecto Niños<br> Bomboná</b>
-            </a>
-        </div>
-
-        <div class="w3-container w3-section w3-col lg-6 m6 s12 proyectos_mySlides">
-            <a class="w3-button w3-xlarge w3-text-gray w3-hover-none w3-hover-text-red">
-                <b>Proyecto PEPE<br> Network</b>
-            </a>
-        </div>
-
-        <!-- mostrar todos los elementos -->
-        <button class="w3-button w3-hover-none w3-display-bottom w3-block" id="proyectos_arrow-all" onclick="proyectos_showAll()">
-           Mostrar todos <b>&#8650;</b>
-        </button>
-
-        <!-- prev and next control-->
-        <button class="w3-button w3-hover-none w3-display-left" id="proyectos_arrow-prev" onclick="proyectos_plusDivs(-1)">&#10094;</button>
-        <button class="w3-button w3-hover-none w3-display-right" id="proyectos_arrow-next" onclick="proyectos_plusDivs(1)">&#10095;</button>
-
-    </div>
-    <br><br>
-</div>
-
-<script>
-    var proyectos_slideIndex = 1;
-    proyectos_showDivs(proyectos_slideIndex);
-
-    function proyectos_plusDivs(n) {
-        proyectos_showDivs(proyectos_slideIndex += n);
-    }
-
-    function proyectos_showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("proyectos_mySlides");
-        if (n > x.length) {proyectos_slideIndex = 1}
-        if (n < 1) {proyectos_slideIndex = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+        function proyectos_plusDivs(n) {
+            proyectos_showDivs(proyectos_slideIndex += n);
         }
-        x[proyectos_slideIndex-1].style.display = "block";
-    }
 
-    function proyectos_showAll() {
-        var arrow_prev = document.getElementById("proyectos_arrow-prev");
-        var arrow_next = document.getElementById("proyectos_arrow-next");
-        var arrow_all = document.getElementById("proyectos_arrow-all");
-
-        var x = document.getElementsByClassName("proyectos_mySlides");
-
-        console.log(arrow_all.innerHTML);
-
-        if(arrow_next.style.display === "none"){
-            proyectos_plusDivs(0);
-            arrow_prev.style.display = "block";
-            arrow_next.style.display = "block";
-            arrow_all.innerHTML = "Mostrar todos <b>&#8650;</b>";
-
-        } else {
+        function proyectos_showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("proyectos_mySlides");
+            if (n > x.length) {proyectos_slideIndex = 1}
+            if (n < 1) {proyectos_slideIndex = x.length}
             for (i = 0; i < x.length; i++) {
-                x[i].style.display = "block";
+                x[i].style.display = "none";
             }
-            arrow_prev.style.display = "none";
-            arrow_next.style.display = "none";
-            arrow_all.innerHTML = "Ocultar <b>&#8648;</b>";
+            x[proyectos_slideIndex-1].style.display = "block";
         }
-    }
-</script>
 
-<!-- Modal -->
-<div id="download" class="w3-modal w3-animate-opacity">
-    <div class="w3-modal-content" style="padding:32px">
-        <div class="w3-row">
-            <form id="download_form" class="w3-container w3-white w3-col l6 m7">
-                <h3 class="w3-wide w3-left w3-text-green">
-                    <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-text-red w3-right w3-hover-text-green w3-hover-white"></i>
+        function proyectos_showAll() {
+            var arrow_prev = document.getElementById("proyectos_arrow-prev");
+            var arrow_next = document.getElementById("proyectos_arrow-next");
+            var arrow_all = document.getElementById("proyectos_arrow-all");
+
+            var x = document.getElementsByClassName("proyectos_mySlides");
+
+            if(arrow_next.style.display === "none"){
+                proyectos_plusDivs(0);
+                arrow_prev.style.display = "block";
+                arrow_next.style.display = "block";
+                arrow_all.innerHTML = "Mostrar todos <b>&#8650;</b>";
+
+            } else {
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "block";
+                }
+                arrow_prev.style.display = "none";
+                arrow_next.style.display = "none";
+                arrow_all.innerHTML = "Ocultar <b>&#8648;</b>";
+            }
+        }
+    </script>
+
+    <!-- nosotros Proyecto MUF Section -->
+    <div class="w3-padding-64 w3-light-grey bg-cover" id="nosotros">
+
+        <div class="w3-row-padding">
+            <div class="w3-col l12 m12 ">
+                <p class="w3-center black-background title">
+                    <b class="w3-xlarge">Proyecto MUF </b>
                     <br>
-                    <strong>REENCUENTRO CON LAS NUEVAS GENERACIONES POST COVID 19</strong>
-                </h3>
-                <p class="w3-large w3-text-gray">
-                    Antes de descargar una copia del libro, nos gustaría saber tu nombre, tu correo electrónico y también saber que expectativas tienes sobre el.
-                    Esto con el fin de compatir a futuro comentarios sobre el E-book o crear un nuevo contacto con nuevos hermanos en Cristo.
+                    <b class="w3-large w3-text-blue"> Metamorfosis universitaria</b>
                 </p>
-                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="name">
+            </div>
+        </div>
+
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col l6 m6">
+                <p class="w3-xlarge black-background">
+                    <span class="w3-xlarge w3-text-red title">Misión </span><br>
+                    <span class="text w3-large">
+                        <b>Hacer discípulos multiplicadores a partir de la comunidad universitaria y profesional a través de un ministerio integral.</b>
+                    </span>
+                </p>
+            </div>
+            <div class="w3-col l6 m6">
+                <p class="w3-xlarge black-background">
+                    <span class="w3-xlarge w3-text-red title">Visión</span><br>
+                    <span class="text w3-large">
+                        <b>Ver Valencia, Venezuela y el mundo liderada por personas comprometidas con Cristo.</b>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Valores Section -->
+    <div class="w3-container w3-padding-64 w3-center" id="valores">
+        <p class="w3-xlarge"><b>Valores</b></p>
+        <p class="w3-large">En nuestro entorno, cultivamos e insentivamos los valores.</p>
+
+        <div class="w3-row" style="margin-top:64px">
+            <div class="w3-col s6 m3">
+                <i class="fa fa-bolt w3-text-orange w3-xlarge"></i>
+                <p> <b>EXCELENCIA</b></p>
+            </div>
+            <div class="w3-col s6 m3">
+                <i class="fa fa-heart w3-text-red w3-xlarge"></i>
+                <p> <b>SOLIDARIDAD</b></p>
+            </div>
+            <div class="w3-col s6 m3">
+                <i class="fa fa-handshake-o w3-text-yellow w3-xlarge"></i>
+                <p> <b>COMPROMISO</b></p>
+            </div>
+            <div class="w3-col s6 m3">
+                <i class="fa fa-child w3-text-green w3-xlarge"></i>
+                <p> <b>GRATITUD </b></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff Section -->
+    <div class="w3-container w3-light-gray" style="padding:3%" id="staff">
+        <h3 class="w3-center w3-xxlarge">Staff</h3>
+
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col l3 m6 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Darío Ortega</p>
+                    <img src="assets/app/img/team/dario.png" alt="Dario Ortega" class="w3-image w3-round">
+                    <p class="w3-large w3-opacity">CEO GOMUF</p>
+                    <div class="w3-section w3-left-align">
+                        &#8227; Terapeuta Psicosocial<br>
+                        &#8227; Teólogo<br>
+                        &#8227; Coaching de Liderazgo<br>
+                        &#8227; Docente Universitario<br>
+                        &#8227; Líder Chapel Navegantes del Magallanes (LBPV)<br>
+                        &#8227; Coordinador FCA Carabobo<br>
+                        &#8227; Miembro del Equipo Pastoral IB MUF Valencia
                     </div>
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Correo Electrónico" required name="email">
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Luzmery de Ortega</p>
+                    <img src="assets/app/img/team/luzmery.jpeg" alt="Luzmery Albornoz de Ortega" class="w3-image w3-round">
+                    <p class="w3-large w3-opacity">Directora GOMUF</p>
+                    <div class="w3-section w3-left-align">
+                        &#8227; Psicóloga<br>
+                        &#8227; Terapeuta Psicosocial<br>
+                        &#8227; Teólogo<br>
+                        &#8227; Docente Universitaria<br>
+                        &#8227; Líder Chapel Navegantes del Magallanes (LBPV)<br>
+                        &#8227; Miembro del Equipo Pastoral IB MUF Valencia
                     </div>
                 </div>
-                <textarea col="5" row="5" class="w3-input w3-border" placeholder="Mensaje" required name="msj"></textarea>
-                <hr>
-                <button id="download_btn" type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Descargar E-Book</button>
-            </form>
-        </div>
-    </div>
-</div>
+            </div>
 
-<!-- nosotros Proyecto MUF Section -->
-<!-- div class="w3-padding-64 w3-light-grey bg-cover" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/app/img/fondo.jpg');" id="nosotros">-->
-<div class="w3-padding-64 w3-light-grey bg-cover" style="background-image: url('assets/app/img/fondo.jpg'); background-position: bottom;" id="nosotros">
+            <div class="w3-col l3 m6 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Santiago Ortega</p>
+                    <img src="assets/app/img/team/santiago.jpg" alt="Santiago Ortega" class="w3-image w3-round">
+                    <p class="w3-large w3-opacity">Logística</p>
+                    <div class="w3-section w3-left-align">
+                        Productor Musical
+                    </div>
+                </div>
+            </div>
 
-    <div class="w3-row-padding">
-        <div class="w3-col l12 m12 ">
-            <p class="w3-center black-background title">
-                <b class="w3-xlarge">Proyecto MUF </b>
-                <br>
-                <b class="w3-large w3-text-blue"> Metamorfosis universitaria</b>
-            </p>
-        </div>
-    </div>
-
-    <div class="w3-row-padding w3-center">
-        <div class="w3-col l6 m6">
-            <p class="w3-xlarge black-background">
-                <span class="w3-xlarge w3-text-red title">Misión </span><br>
-                <span class="text w3-large">
-                    <b>Hacer discípulos multiplicadores a partir de la comunidad universitaria y profesional a través de un ministerio integral.</b>
-                </span>
-            </p>
-        </div>
-        <div class="w3-col l6 m6">
-            <p class="w3-xlarge black-background">
-                <span class="w3-xlarge w3-text-red title">Visión</span><br>
-                <span class="text w3-large">
-                    <b>Ver Valencia, Venezuela y el mundo liderada por personas comprometidas con Cristo.</b>
-                </span>
-            </p>
-        </div>
-    </div>
-</div>
-
-<!-- Valores Section -->
-<div class="w3-container w3-padding-64 w3-center" id="valores">
-    <p class="w3-xlarge"><b>Valores</b></p>
-    <p class="w3-large">En nuestro entorno, cultivamos e insentivamos los valores.</p>
-
-    <div class="w3-row" style="margin-top:64px">
-        <div class="w3-col s6 m3">
-            <i class="fa fa-bolt w3-text-orange w3-xlarge"></i>
-            <p> <b>EXCELENCIA</b></p>
-        </div>
-        <div class="w3-col s6 m3">
-            <i class="fa fa-heart w3-text-red w3-xlarge"></i>
-            <p> <b>SOLIDARIDAD</b></p>
-        </div>
-        <div class="w3-col s6 m3">
-            <i class="fa fa-handshake-o w3-text-yellow w3-xlarge"></i>
-            <p> <b>COMPROMISO</b></p>
-        </div>
-        <div class="w3-col s6 m3">
-            <i class="fa fa-child w3-text-green w3-xlarge"></i>
-            <p> <b>GRATITUD </b></p>
-        </div>
-    </div>
-</div>
-
-<style>
-    #staff .w3-row-padding .w3-col{
-        float: left !important;
-        position: relative;
-    }
-</style>
-<!-- Staff Section -->
-<div class="w3-container w3-light-gray" style="padding:3%" id="staff">
-    <h3 class="w3-center w3-xxlarge">Staff</h3>
-
-    <div class="w3-row-padding w3-grayscale">
-        <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Darío Ortega</p>
-                <img src="assets/app/img/team/dario.png" alt="Dario Ortega" class="w3-image w3-round">
-                <p class="w3-large w3-opacity">CEO GOMUF</p>
-                <div class="w3-section w3-left-align">
-                    &#8227; Terapeuta Psicosocial<br>
-                    &#8227; Teólogo<br>
-                    &#8227; Coaching de Liderazgo<br>
-                    &#8227; Docente Universitario<br>
-                    &#8227; Líder Chapel Navegantes del Magallanes (LBPV)<br>
-                    &#8227; Coordinador FCA Carabobo<br>
-                    &#8227; Miembro del Equipo Pastoral IB MUF Valencia
+            <div class="w3-col l3 m6 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Génesis Ortega</p>
+                    <img src="assets/app/img/team/genesis.jpeg" alt="Génesis Ortega" class="w3-image w3-round">
+                    <p class="w3-large w3-opacity">Community Manager</p>
+                    <div class="w3-section w3-left-align">
+                        &#8227; Escritora<br>
+                        &#8227; Líder Universitario<br>
+                        &#8227; Diseñador Grafico
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Luzmery de Ortega</p>
-                <img src="assets/app/img/team/luzmery.jpeg" alt="Luzmery Albornoz de Ortega" class="w3-image w3-round">
-                <p class="w3-large w3-opacity">Directora GOMUF</p>
-                <div class="w3-section w3-left-align">
-                    &#8227; Psicóloga<br>
-                    &#8227; Terapeuta Psicosocial<br>
-                    &#8227; Teólogo<br>
-                    &#8227; Docente Universitaria<br>
-                    &#8227; Líder Chapel Navegantes del Magallanes (LBPV)<br>
-                    &#8227; Miembro del Equipo Pastoral IB MUF Valencia
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col l1 w3-margin-bottom"></div>
+
+            <div class="w3-col l2 m4 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Jesús Izaguirre</p>
+                    <img src="assets/app/img/team/jesus.jpg" alt="Jesús Ernesto Izaguirre"  class="w3-image w3-round" width="350" height="500">
+                    <p class="w3-large w3-opacity">Coordinador de Proyecto <br> MUF - UJAP</p>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m4 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Clarismar de Sarría</p>
+                    <img src="assets/app/img/team/clarismar.jpg" alt="Clarismar de Sarría"  class="w3-image w3-round" width="350" height="500">
+                    <p class="w3-large w3-opacity">Equipo <br>Pastoral MUF <br> Naguanagua - Venezuela</p>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m4 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Leonardo Sarría</p>
+                    <img src="assets/app/img/team/leonardo.jpg" alt="Leonardo Sarría"  class="w3-image w3-round" width="350" height="500">
+                    <p class="w3-large w3-opacity">Equipo <br>Pastoral MUF <br> Naguanagua - Venezuela</p>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m4 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Natalia Montoya</p>
+                    <img src="assets/app/img/team/natalia.jpg" alt="Natalia Montoya"  class="w3-image w3-round" width="350" height="500">
+                    <p class="w3-large w3-opacity">Saint-Martin <br> Coordinadora Logística Internacional</p>
+                </div>
+            </div>
+
+            <div class="w3-col l2 m4 s12 w3-margin-bottom">
+                <div class="w3-container w3-center">
+                    <p class="w3-xlarge">Sylvania Vasquez</p>
+                    <img src="assets/app/img/team/sylvania.jpg" alt="Sylvania Vasquez Covault"  class="w3-image w3-round" width="350" height="500">
+                    <p class="w3-large w3-opacity">Coordinadora Logística Proyectos</p>
                 </div>
             </div>
         </div>
 
-        <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Santiago Ortega</p>
-                <img src="assets/app/img/team/santiago.jpg" alt="Santiago Ortega" class="w3-image w3-round">
-                <p class="w3-large w3-opacity">Logística</p>
-                <div class="w3-section w3-left-align">
-                    Productor Musical
+    </div>
+
+
+    <!-- campus accion Section -->
+    <div class="w3-container" id="campus_accion">
+        <h3 class="w3-display-container w3-row w3-center w3-xlarge">
+            <b class="w3-text-white">Campus de Acción</b><br>
+            <i class="w3-text-blue">Esfera Educación</i>
+        </h3>
+
+        <div class="w3-row w3-row-padding w3-center w3-text-red">
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Universidad De Carabobo
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Universidad José Antonio Páez
                 </div>
             </div>
         </div>
 
-        <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Génesis Ortega</p>
-                <img src="assets/app/img/team/genesis.jpeg" alt="Génesis Ortega" class="w3-image w3-round">
-                <p class="w3-large w3-opacity">Community Manager</p>
-                <div class="w3-section w3-left-align">
-                    &#8227; Escritora<br>
-                    &#8227; Líder Universitario<br>
-                    &#8227; Diseñador Grafico
+        <div class="w3-row w3-row-padding w3-center w3-text-red">
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Universidad Arturo Michelena
+                </div>
+            </div>
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Universidad Alejandro De Humboldt
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w3-row w3-row-padding w3-center w3-text-red">
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Universidad Tecnológica Del Centro
+                </div>
+            </div>
+            <div class="w3-col l3 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Instituto Universitario De Tecnología De Administración Industrial
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="w3-row w3-row-padding w3-center w3-text-green">
+
+            <div class="w3-col l3 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Instituto Universitario De Nuevas Profesiones
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Instituto Universitario De Tecnología Antonio José De Sucre
+                </div>
+            </div>
+
+            <div class="w3-col l3 m6 s12 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Instituto Universitario De Tecnología Juan Pablo Pérez Alfonzo
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="w3-row w3-row-padding w3-center w3-text-blue">
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Colegio Universitario De Administración Y Mercadeo
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Colegio La Esperanza
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-row w3-row-padding w3-center w3-text-blue">
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Colegio Los Pinos
+                </div>
+            </div>
+
+            <div class="w3-col l2 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Unidad Educativa Batalla De Bomboná
+                </div>
+            </div>
+        </div>
+        <div class="w3-row w3-row-padding w3-center w3-text-blue">
+            <div class="w3-col l2 m6 s12 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Unidad Educativa Lago De Maracaibo
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- Proyectos Con La Niñez -->
+        <h3 class="w3-row w3-center w3-xlarge w3-display-container">Proyectos con la Niñez</h3>
+        <div class="w3-row w3-row-padding w3-center w3-text-blue">
+            <div class="w3-col s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Programa Pepe Network
+                </div>
+            </div>
+
+            <div class="w3-col s6 w3-margin-bottom">
+                <div class="w3-display-container w3-padding nombre_casa_estudio">
+                    Proyecto Niños Bomboná
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="w3-row-padding w3-grayscale">
-        <div class="w3-col l1 w3-margin-bottom"></div>
 
-        <div class="w3-col l2 m4 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Jesús Izaguirre</p>
-                <img src="assets/app/img/team/jesus.jpg" alt="Jesús Ernesto Izaguirre"  class="w3-image w3-round" width="350" height="500">
-                <p class="w3-large w3-opacity">Coordinador de Proyecto <br> MUF - UJAP</p>
-            </div>
-        </div>
-
-        <div class="w3-col l2 m4 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Clarismar de Sarría</p>
-                <img src="assets/app/img/team/clarismar.jpg" alt="Clarismar de Sarría"  class="w3-image w3-round" width="350" height="500">
-                <p class="w3-large w3-opacity">Equipo <br>Pastoral MUF <br> Naguanagua - Venezuela</p>
-            </div>
-        </div>
-
-        <div class="w3-col l2 m4 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Leonardo Sarría</p>
-                <img src="assets/app/img/team/leonardo.jpg" alt="Leonardo Sarría"  class="w3-image w3-round" width="350" height="500">
-                <p class="w3-large w3-opacity">Equipo <br>Pastoral MUF <br> Naguanagua - Venezuela</p>
-            </div>
-        </div>
-
-        <div class="w3-col l2 m4 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Natalia Montoya</p>
-                <img src="assets/app/img/team/natalia.jpg" alt="Natalia Montoya"  class="w3-image w3-round" width="350" height="500">
-                <p class="w3-large w3-opacity">Saint-Martin <br> Coordinadora Logística Internacional</p>
-            </div>
-        </div>
-
-        <div class="w3-col l2 m4 s12 w3-margin-bottom">
-            <div class="w3-container w3-center">
-                <p class="w3-xlarge">Sylvania Vasquez</p>
-                <img src="assets/app/img/team/sylvania.jpg" alt="Sylvania Vasquez Covault"  class="w3-image w3-round" width="350" height="500">
-                <p class="w3-large w3-opacity">Coordinadora Logística Proyectos</p>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-<!-- campus accion Section -->
-<div class="w3-container" id="campus_accion">
-    <h3 class="w3-display-container w3-row w3-center w3-xlarge">
-        <b class="w3-text-white">Campus de Acción</b><br>
-        <i class="w3-text-blue">Esfera Educación</i>
-    </h3>
-
-    <div class="w3-row w3-row-padding w3-center w3-text-red">
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Universidad De Carabobo
-            </div>
-        </div>
-
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Universidad José Antonio Páez
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-row w3-row-padding w3-center w3-text-red">
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Universidad Arturo Michelena
-            </div>
-        </div>
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Universidad Alejandro De Humboldt
-            </div>
-        </div>
-    </div>
-    
-
-    <div class="w3-row w3-row-padding w3-center w3-text-red">
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Universidad Tecnológica Del Centro
-            </div>
-        </div>
-        <div class="w3-col l3 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Instituto Universitario De Tecnología De Administración Industrial
-            </div>
-        </div>
-    </div>
-
-    <br><br>
-    <div class="w3-row w3-row-padding w3-center w3-text-green">
-
-        <div class="w3-col l3 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Instituto Universitario De Nuevas Profesiones
-            </div>
-        </div>
-
-        <div class="w3-col l3 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Instituto Universitario De Tecnología Antonio José De Sucre
-            </div>
-        </div>
-
-        <div class="w3-col l3 m6 s12 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Instituto Universitario De Tecnología Juan Pablo Pérez Alfonzo
-            </div>
-        </div>
-    </div>
-
-    <br><br>
-
-    <div class="w3-row w3-row-padding w3-center w3-text-blue">
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Colegio Universitario De Administración Y Mercadeo
-            </div>
-        </div>
-
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Colegio La Esperanza
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-row w3-row-padding w3-center w3-text-blue">
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Colegio Los Pinos
-            </div>
-        </div>
-
-        <div class="w3-col l2 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Unidad Educativa Batalla De Bomboná
-            </div>
-        </div>
-    </div>
-    <div class="w3-row w3-row-padding w3-center w3-text-blue">
-        <div class="w3-col l2 m6 s12 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Unidad Educativa Lago De Maracaibo
-            </div>
-        </div>
-    </div>
-    <br>
-    <!-- Proyectos Con La Niñez -->
-    <h3 class="w3-row w3-center w3-xlarge w3-display-container">Proyectos con la Niñez</h3>
-    <div class="w3-row w3-row-padding w3-center w3-text-blue">
-        <div class="w3-col s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Programa Pepe Network
-            </div>
-        </div>
-
-        <div class="w3-col s6 w3-margin-bottom">
-            <div class="w3-display-container w3-padding nombre_casa_estudio">
-                Proyecto Niños Bomboná 
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Staff Section -->
-<div class="w3-container w3-white" style="padding:128px 16px" id="staff">
-    <div class="w3-row-padding w3-center margin-top">
-        <div class="w3-col l4 m4 s12 w3-margin-top">
-            <div class="w3-card">
-                <img src='assets/app/img/pastores.jpeg' alt="Luzmery Albornoz de Ortega" style="width:100%">
-            </div>
-        </div>
-
-        <div class="w3-col l8 m8 w3-margin-top">
-            <p class="w3-large">
-                Ambos suman más de 25 años de experiencia de trabajo con los niños y los jóvenes en diferentes espacios, entre ellos los últimos años en los campus universitarios en Venezuela. Han participado en múltiples conferencias, congresos, talleres y charlas compartiendo experiencia y enseñanzas en medio de las nuevas generaciones.
-            </p>
-            <p class="w3-large">
-                Entrenamiento, charlas, talleres, asesoramiento, conferencias y acompañamiento integral a ministerios y organizaciones. (Liderazgo, Coaching, Psicología, Terapia Psicosocial) 
-            </p>
-        </div>
-    </div>
-</div>
-
-
-<div class="w3-container" id="alianzas">
-    <h3 class="w3-row w3-center w3-xlarge w3-display-container">Alianzas<br><i class="">Estratégicas</i></h3>
-
-    <div class="w3-row w3-row-padding w3-text-white">
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Charlottesville Community Church
-            </div>
-        </div>
-
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Casa Hogar Amor, Fe <br> Y Esperanza
-            </div>
-        </div>
-    </div>
-    <div class="w3-row w3-row-padding w3-text-white">
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Grupo Rec / Alumbra
-            </div>
-        </div>
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Comité De Empresarios<br>Y Profesionales Cristianos
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-row w3-row-padding w3-text-white">
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Primera Iglesia Bautista<br>De Valencia
-            </div>
-        </div>
-
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Primera Iglesia Bautista<br>De Puerto Cabello
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-row w3-row-padding w3-text-white">
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Iglesia Real 
-            </div>
-        </div>
-
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Centro De Filosofía<br>Para La Investigación<br>tanislao Strba
-            </div>
-        </div>
-    </div>
-
-    <div class="w3-col l6 m6 s6 w3-margin-bottom">
-        <div class="w3-display-container nombre_casa_estudio">
-                Convención Nacional<br>Bautista De Venezuela
-            </div>
-        </div>
-        <div class="w3-col l6 m6 s6 w3-margin-bottom">
-            <div class="w3-display-container nombre_casa_estudio">
-                Fellowship Of Christian Athletes
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<!-- Container (Contact Section) -->
-<div class="w3-row w3-white" id="contact">
-    <div class="w3-content w3-container w3-padding-64" id="contact">
-        <h3 class="w3-center w3-xlarge">Desde Aquí Trabajamos</h3>
-        <p class="w3-center w3-large"><em>Información de contacto</em></p>
-
-        <div class="w3-row w3-padding-32 w3-section">
-            <div class="w3-col m4 w3-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26419.166210981297!2d-68.00438364898079!3d10.161742985473364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e80678bce61928f%3A0x9f78e9eea8c34272!2sValencia%2C%20Carabobo!5e0!3m2!1ses-419!2sve!4v1588049595013!5m2!1ses-419!2sve" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-
-            <div class="w3-col m8 w3-panel w3-text-gray">
-                <div class="w3-large w3-margin-bottom">
-                    <i class="fa fa-map-marker w3-text-blue"></i>Valencia, Venezuela<br>
-                    <a href="tel:+584144371968"><i class="fa fa-phone w3-text-blue"></i>+58 414 4371968</a><br>
-                    <a href="mailto:contacto.gomuf@gmail.com" target="_blank"><i class="fa fa-envelope-o w3-text-blue"></i>contacto.gomuf@gmail.com</a><br>
-                    <a href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank"><i class="fa fa-facebook w3-text-blue"></i>Misión Última Frontera Valencia</a><br>
-                    <a href="https://www.instagram.com/mufvalencia/" target="_blank"><i class="fa fa-instagram w3-text-blue"></i>@mufvalencia</a><br>
+    <!-- experiencia Section -->
+    <div class="w3-container w3-white" style="padding:128px 16px">
+        <div class="w3-row-padding w3-center margin-top">
+            <div class="w3-col l4 m4 s12 w3-margin-top">
+                <div class="w3-card">
+                    <img src='assets/app/img/pastores.jpeg' alt="Luzmery Albornoz de Ortega" style="width:100%">
                 </div>
-                    <p class="w3-large">Si gustas contactarte con nosotros, puedes enviarnos un mensaje a nuestro correo electronico o bien puedes escribirnos por aquí: </p>
-                <form id="contact_form">
-                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="name">
+            </div>
+
+            <div class="w3-col l8 m8 w3-margin-top">
+                <p class="w3-large">
+                    Ambos suman más de 25 años de experiencia de trabajo con los niños y los jóvenes en diferentes espacios, entre ellos los últimos años en los campus universitarios en Venezuela. Han participado en múltiples conferencias, congresos, talleres y charlas compartiendo experiencia y enseñanzas en medio de las nuevas generaciones.
+                </p>
+                <p class="w3-large">
+                    Entrenamiento, charlas, talleres, asesoramiento, conferencias y acompañamiento integral a ministerios y organizaciones. (Liderazgo, Coaching, Psicología, Terapia Psicosocial)
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="w3-container" id="alianzas">
+        <h3 class="w3-row w3-center w3-xlarge w3-display-container">Alianzas<br><i class="">Estratégicas</i></h3>
+
+        <div class="w3-row w3-row-padding w3-text-white">
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Charlottesville Community Church
+                </div>
+            </div>
+
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Casa Hogar Amor, Fe <br> Y Esperanza
+                </div>
+            </div>
+        </div>
+        <div class="w3-row w3-row-padding w3-text-white">
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Grupo Rec / Alumbra
+                </div>
+            </div>
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Comité De Empresarios<br>Y Profesionales Cristianos
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-row w3-row-padding w3-text-white">
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Primera Iglesia Bautista<br>De Valencia
+                </div>
+            </div>
+
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Primera Iglesia Bautista<br>De Puerto Cabello
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-row w3-row-padding w3-text-white">
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Iglesia Real
+                </div>
+            </div>
+
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Centro De Filosofía<br>Para La Investigación<br>tanislao Strba
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-col l6 m6 s6 w3-margin-bottom">
+            <div class="w3-display-container nombre_casa_estudio">
+                    Convención Nacional<br>Bautista De Venezuela
+                </div>
+            </div>
+            <div class="w3-col l6 m6 s6 w3-margin-bottom">
+                <div class="w3-display-container nombre_casa_estudio">
+                    Fellowship Of Christian Athletes
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div class="w3-row w3-white" id="contact">
+        <div class="w3-content w3-container w3-padding-64">
+            <h3 class="w3-center w3-xlarge">Desde Aquí Trabajamos</h3>
+            <p class="w3-center w3-large"><em>Información de contacto</em></p>
+
+            <div class="w3-row w3-padding-32 w3-section">
+                <div class="w3-col m4 w3-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26419.166210981297!2d-68.00438364898079!3d10.161742985473364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e80678bce61928f%3A0x9f78e9eea8c34272!2sValencia%2C%20Carabobo!5e0!3m2!1ses-419!2sve!4v1588049595013!5m2!1ses-419!2sve" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+
+                <div class="w3-col m8 w3-panel w3-text-gray">
+                    <div class="w3-large w3-margin-bottom">
+                        <i class="fa fa-map-marker w3-text-blue"></i>Valencia, Venezuela<br>
+                        <a href="tel:+584144371968" class="w3-text-blue">
+                            <i class="fa fa-phone w3-text-blue"></i>+58 414 4371968
+                        </a><br>
+
+                        <a href="mailto:contacto.gomuf@gmail.com" target="_blank" class="w3-text-blue">
+                            <i class="fa fa-envelope-o w3-text-blue"></i>contacto.gomuf@gmail.com
+                        </a><br>
+
+                        <a href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank" class="w3-medium w3-text-blue">
+                            <i class="fa fa-facebook w3-text-blue"></i>Misión Última Frontera Valencia
+                        </a><br>
+
+                        <a href="https://www.instagram.com/mufvalencia/" target="_blank" class="w3-text-blue">
+                            <i class="fa fa-instagram w3-text-blue"></i>@mufvalencia
+                        </a><br>
+                    </div>
+                        <p class="w3-large">Si gustas contactarte con nosotros, puedes enviarnos un mensaje a nuestro correo electronico o bien puedes escribirnos por aquí: </p>
+                    <form id="contact_form">
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="name">
+                            </div>
+
+                            <div class="w3-half w3-margin-top">
+                                <input class="w3-input w3-border" type="text" placeholder="Correo Electrónico" required name="email">
+                            </div>
+
+                            <div class="w3-col l12 m12 s12 w3-margin-top">
+                                <textarea class="w3-input w3-border" placeholder="Mensaje" required name="msj"></textarea>
+                            </div>
                         </div>
-                        <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Correo Electrónico" required name="email">
-                        </div>
-                    </div>
-                    <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="msj">
-                    <button id="contact_btn" class="w3-button w3-green w3-hover-text-green w3-right w3-section" type="submit">
-                        <a href="mailto:contacto.gomuf@gmail.com" target="_blank">
-                            <i class="fa fa-paper-plane"></i> Envíar Mensaje
-                        </a>
-                    </button>
-                </form>
+                        <button id="contact_btn" class="w3-button w3-hover-green w3-right w3-section" type="submit">
+                            <a href="mailto:contacto.gomuf@gmail.com" target="_blank">
+                                <i class="fa fa-paper-plane"></i> Envíar Mensaje
+                            </a>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}
 

@@ -1,6 +1,10 @@
-{% extends 'overall/layout_ebooks' %}
+{% extends 'overall/layout' %}
 
 {% block appBody %}
+
+    <!-- incluyendo el header -->
+    {% include 'overall/includes/ebooks' %}
+
     <style>
         #e1_parrafo_hidden, #e2_parrafo_hidden, #e3_parrafo_hidden{
             display: none;
@@ -235,7 +239,7 @@
         }
     </script>
 
-    <!-- Preview misiones en cyberia
+    <!-- Preview misiones en cyberia -->
     <div id="preview_cyberia" class="w3-modal w3-animate-opacity">
         <div class="w3-modal-content w3-display-container">
             <b onclick="document.getElementById('preview_cyberia').style.display='none'" class=" w3-xlarge w3-button w3-text-green w3-hover-text-red w3-display-right">Cerrar</b>
@@ -244,9 +248,8 @@
             </div>
         </div>
     </div>
-    -->
 
-    <!-- Preview lo que aprendi en cuarentena
+    <!-- Preview lo que aprendi en cuarentena -->
     <div id="preview_cuarentena" class="w3-modal w3-animate-opacity">
         <div class="w3-modal-content w3-display-container">
             <b onclick="document.getElementById('preview_cuarentena').style.display='none'" class="w3-large w3-button w3-text-green w3-hover-text-red w3-display-right">Cerrar</b>
@@ -255,8 +258,8 @@
             </div>
         </div>
     </div>
-    -->
-    <!-- Preview Reencuentro
+
+    <!-- Preview Reencuentro -->
     <div id="preview_reencuentro" class="w3-modal w3-animate-opacity">
         <div class="w3-modal-content w3-display-container">
             <b onclick="document.getElementById('preview_reencuentro').style.display='none'" class=" w3-xlarge w3-button w3-text-green w3-hover-text-red w3-display-right">Cerrar</b>
@@ -265,7 +268,7 @@
             </div>
         </div>
     </div>
-     -->
+
 
 
     <!-- Modal -->
