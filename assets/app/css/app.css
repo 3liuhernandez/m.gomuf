@@ -24,12 +24,13 @@ a{
     background-color: rgba(0, 0, 0, .6);
 }
 
-.bg-cover{
+#nosotros.bg-cover{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
 }
+
 .color-background{
     padding: 10px;
     border-radius: 8px;
