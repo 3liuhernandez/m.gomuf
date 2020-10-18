@@ -6,14 +6,88 @@
     {% include 'overall/includes/ebooks' %}
 
     <style>
-        #e1_parrafo_hidden, #e2_parrafo_hidden, #e3_parrafo_hidden{
+        #e1_parrafo_hidden, #e2_parrafo_hidden, #e3_parrafo_hidden, #e4_parrafo_hidden{
             display: none;
         }
         .sinopsis{
             margin: 3% auto;
         }
     </style>
+    <!-- ebook joven resiliente -->
+    <div class="w3-row-padding w3-white" id="joven">
+        <h3 class="w3-xlarge w3-text-blue w3-center"><b> JOVEN RESILIENTE </b></h3>
+        <div class="w3-col l4 m6 s12 w3-center">
+            <div class="w3-display-container">
+                <img src="assets/app/img/libros/joven_resilente.jpeg" class="w3-image w3-margin-top" width="335" height="471">
 
+                <div class="w3-display-middle w3-large w3-hide" onclick="document.getElementById('preview_joven').style.display='block'">
+                    <button class="w3-button w3-white w3-text-blue w3-hover-white w3-hover-text-green">
+                        Vista Previa del E-Book
+                    </button>
+                </div>
+            </div>
+
+            <div class="w3-large w3-hide" onclick="document.getElementById('preview_joven').style.display='block'">
+                <button class="w3-button w3-white w3-text-blue w3-hover-white w3-hover-text-green">
+                    Vista Previa del E-Book
+                </button>
+            </div>
+
+            <button class="w3-button w3-padding w3-section" onclick="descargar_ebook('4');">
+                <i class="fa fa-download"></i> Adquiere una copia del libro.
+            </button>
+            <br>
+        </div>
+
+        <div class="w3-col l8 m6 s12">
+            <p class="sinopsis w3-large">
+                Ser adolescente o joven en esta época tan convulsionada a nivel mundial es un gran desafío. Esta etapa de la vida es una extraordinaria oportunidad para formular y desarrollar un proyecto de vida centrado en el propósito de Dios.<br><br>
+
+                La resiliencia es una virtud dada por Dios a todo ser humano. Es factible ser joven resiliente para enfrentar la crisis de la vida y por encima de todo cumplir su misión de vida. <span id="e4_suspensivos"> ... </span>
+                <span id="e4_parrafo_hidden">
+                Este libro nos presenta una visión desde la perspectiva juvenil de la resiliencia y sus beneficios para el joven.
+                <br><br>
+
+                En este E-Book los jóvenes podrán encontrar recursos para propiciar la reflexión que le lleve a responder a preguntas más profundas en su vida. También una guía para el desarrollo de una autoestima, autoimagen y autoconocimiento saludable.
+                <br><br>
+                Recurso imprescindible para los padres, líderes juveniles, maestros, docentes universitarios, entrenadores deportivos y todo aquel que trabaje en las nuevas generaciones.
+                </span>
+            </p>
+
+            <a id="e4_ver_mas" class="w3-button w3-blue w3-block w3-hover-red" onclick="e4_readmore();">
+                Leer mas
+            </a>
+
+            <i class="w3-block w3-section">
+                <strong class="w3-large">
+                    Autor: Darío Ortega <br>
+                    Prólogo: Misionera Lic. Robín Elizabeth White de Tinley.<br>
+                    Introducción: Dra. Lupita Moore.
+                </strong>
+            </i>
+
+        </div>
+    </div>
+
+    <script>
+        function e4_readmore(){
+            boton = document.getElementById("e4_ver_mas");
+            parrafo_hidden = document.getElementById("e4_parrafo_hidden");
+            puntos_suspensivos = document.getElementById("e4_suspensivos");
+
+            if (puntos_suspensivos.style.display === "none") {
+                puntos_suspensivos.style.display = "inline";
+                boton.innerHTML = "Leer mas";
+                parrafo_hidden.style.display = "none";
+            } else {
+                puntos_suspensivos.style.display = "none";
+                boton.innerHTML = "Menos";
+                parrafo_hidden.style.display = "inline";
+            }
+        }
+    </script>
+
+    <!-- ebook llamado misionero-->
     <div class="w3-row-padding w3-white" id="cyberia">
         <h3 class="w3-xlarge w3-text-blue w3-center"><b> Llamado Misionero<br> a Cyberia </b></h3>
         <div class="w3-col l4 m6 s12 w3-center">
@@ -84,7 +158,7 @@
 
     <div class="w3-row-padding w3-white" id="cuarentena">
         <h3 class="w3-xlarge w3-text-red w3-center" style="margin-top: 30%">
-            <b> “LO QUE APRENDÍ EN ESTA CUARENTENA”</b>
+            <b> LO QUE APRENDÍ EN ESTA CUARENTENA </b>
         </h3>
 
         <div class="w3-col l4 m6 w3-center s12">
@@ -277,7 +351,7 @@
             <div class="w3-row">
                 <form id="download_form" class="w3-container w3-white w3-col l6 m7">
                     <h3 class="w3-wide w3-center w3-text-green">
-                        <strong id="titulo_ebook"></strong>
+                        <strong id="modal_titulo_ebook"></strong>
                     </h3>
                     <hr>
                     <p class="w3-large w3-text-gray">
@@ -314,7 +388,7 @@
 <script>
     function descargar_ebook(ebook){
         modal = document.getElementById('download_ebook');
-        titutlo_modal = document.getElementById('titulo_ebook');
+        titutlo_modal = document.getElementById('modal_titulo_ebook');
         img = document.getElementById('imagen_ebook');
         input_ebook = document.getElementById('input_ebook');
 
@@ -328,13 +402,19 @@
             case '2':
                 url_pdf = "assets/app/doc/LLAMADO MISIONERO A CYBERIA.pdf";
                 src_img = "assets/app/img/libros/mini_llamado_misionero_ciberia.jpg";
-                titulo = "Llamado Misionero a Cyberia";
+                titulo = "LLAMADO MISIONERO A CYBERIA";
                 break;
 
             case '3':
                 url_pdf = "assets/app/doc/LO QUE APRENDI ESTA CUARENTENA.pdf";
                 src_img = "assets/app/img/libros/mini_lo_que_aprendi_esta_cuarentena.jpg";
-                titulo = "“LO QUE APRENDÍ EN ESTA CUARENTENA”";
+                titulo = "LO QUE APRENDÍ EN ESTA CUARENTENA";
+                break;
+
+            case '4':
+                url_pdf = "assets/app/doc/JOVEN RESILIENTE.pdf";
+                src_img = "assets/app/img/libros/joven_resilente.jpeg";
+                titulo = "JOVEN RESILIENTE";
                 break;
 
             default:

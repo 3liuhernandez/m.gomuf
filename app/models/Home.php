@@ -134,7 +134,7 @@ class Home extends Models implements IModels {
                     'message' => $msj
                 ));
             }else{
-                $this->db->query("UPDATE suscripcion SET download = download + 1 WHERE email = '$email' AND id_libro = '$book_type' LIMIT 1");
+                $this->db->query("UPDATE suscripcion SET download = download + 1, message = CONCAT_WS(', ',message,'$msj') WHERE email = '$email' AND id_libro = '$book_type' LIMIT 1");
             }
             return array('success' => 1, 'message' => 'Su libro se descargará en breve.', 'file' => $directorio);
         } catch (ModelsException $e) {
