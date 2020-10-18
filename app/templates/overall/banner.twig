@@ -1,4 +1,9 @@
 <style>
+.banner-image0 {
+    background-image: url("assets/app/img/libros/joven_resilente.jpeg");
+    background-position: center;
+}
+
 .banner-image1 {
     background-image: url("assets/app/img/libros/llamado_misionero_ciberia.jpg");
     background-position: center;
@@ -203,6 +208,18 @@
 
 <!-- banner section -->
 <div class="w3-container w3-display-container w3-padding-large w3-white">
+    <div class="banner_slides" onclick="banner_enlace('ebooks/#joven');">
+        <div class="banner-image banner-image0"></div>
+        <div class="banner-text">
+            <b class="w3-xlarge w3-blue">
+                Biblioteca Virtual <br> <span class="w3-medium">Metamorfosis Universitaria</span>
+            </b>
+            <br><br>
+            <b class="w3-xlarge">Joven Resiliente</b><br>
+            <p class="w3-large">Dario Ortega</p>
+        </div>
+    </div>
+
     <div class="banner_slides" onclick="banner_enlace('ebooks/#cyberia');">
         <div class="banner-image banner-image1"></div>
         <div class="banner-text">
@@ -371,6 +388,10 @@
     function banner_enlace(enlace) {
         /*window.location.replace("http://www.facebook.com");*/
         switch(enlace){
+            case 'ebooks/#joven':
+                window.location.replace(enlace);
+                break;
+
             case 'ebooks/#cyberia':
                 window.location.replace(enlace);
                 break;
