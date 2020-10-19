@@ -1,0 +1,136 @@
+{% extends 'overall/layout' %}
+{% block appBody %}
+
+<!-- incluyendo el banner al home -->
+{% include 'overall/includes/piaroa' %}
+
+
+<div class="w3-row w3-white w3-padding-large" style="height: 600px">
+	<div class="w3-col l6 m6 s12">
+		<div class="w3-panel">
+			<img src="assets/app/img/mision_piaroa/alberto_adipate.png" class="w3-image w3-col l6 m5 s5" width="300" height="371">	
+			<div class="w3-container w3-col l6 m7 s7 w3-center">
+				<strong class="w3-block w3-margin-bottom">Misionero <br> Alberto Adipate</strong>
+				<a href="https://www.facebook.com/adipate" target="_blank" class="w3-padding">
+                	<i class="fa fa-facebook w3-text-blue"></i>
+	            </a>
+	            <a href="https://www.instagram.com/albertoadipate/" target="_blank" class="w3-padding">
+	                <i class="fa fa-instagram w3-text-purple"></i>
+	            </a>
+			</div>
+		</div>
+	</div>
+
+	<div class="w3-col l6 m6 s12 w3-center">
+		<div class="w3-panel">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9697.878201982225!2d-67.55713400000002!3d5.043521!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd75ec09f85701e60!2sRaudal%20de%20Danto!5e1!3m2!1ses-419!2sve!4v1603130271769!5m2!1ses-419!2sve" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" class=""></iframe>
+			<div class="w3-container w3-display-center">
+				<p>Lugar de trabajo <br><strong> Raudal del Danto. Municipio Autana - Amazonas VE.</strong></p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="w3-section w3-center">
+	<div class="w3-padding-large">
+		<p class="">
+			Capacitando a nuevo liderazgo de la iglesia Cristiana piaroa
+			<br>en las siguientes áreas:<br>
+			<strong class="w3-large">Cosmovision - Liderazgo - Educación con los Principios Bíblicos y Traducciónes de la Historia Bíblica en su Idioma de Corazón. </strong>
+			<br><br>
+			También promoviendo el <strong class="w3-large">rescate de la identidad cultural Piaroa </strong>por medio de la alfabetización con razonamientos. 
+			<br><br>
+			Con el fin de que la iglesia cristiana Piaroa tenga un <strong class="w3-large w3-padding">conocimiento amplio de la verdad de Cristo. </strong>
+		</p>
+	</div>
+</div>
+
+<style type="text/css">
+	#galeria_piaroa{
+		padding: 15% 2%;
+	}
+
+	#galeria_piaroa .w3-rest > img{
+		display: none;
+		width: 90%;
+	}
+
+	#galeria_piaroa .demo{
+		width: 100%;
+		height: 50%;
+		cursor: pointer;
+		margin: 2%;
+	}
+</style>
+
+<div class="w3-row w3-section w3-white" id="galeria_piaroa">
+	<div class="w3-section w3-right w3-col l4 m4 s2">
+		<div class="w3-row">
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img1.jpeg" onclick="currentDiv(1)">
+			</div>
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img2.jpeg" onclick="currentDiv(2)">
+			</div>
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img3.jpeg" onclick="currentDiv(3)">
+			</div>
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img4.jpeg" onclick="currentDiv(4)">
+			</div>
+		</div>
+
+		<div class="w3-row">
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img5.jpeg" onclick="currentDiv(5)">
+			</div>
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img6.jpeg" onclick="currentDiv(6)">
+			</div>
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img7.jpeg" onclick="currentDiv(7)">
+			</div>
+			<div class="w3-col l6 m6 s12">
+				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img8.jpeg" onclick="currentDiv(8)">
+			</div>
+		</div>
+	</div>
+
+	<div class="w3-rest">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img1.jpeg" style="display: block;">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img2.jpeg">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img3.jpeg">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img4.jpeg">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img5.jpeg">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img6.jpeg">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img7.jpeg">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img8.jpeg">
+	</div>
+
+</div>
+
+<script>
+	function currentDiv(n) {
+		showDivs(slideIndex = n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("demo");
+		if (n > x.length) {slideIndex = 1}
+		if (n < 1) {slideIndex = x.length}
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+		}
+		x[slideIndex-1].style.display = "block";
+		dots[slideIndex-1].className += " w3-opacity-off";
+	}
+</script>
+
+
+{% endblock %}
