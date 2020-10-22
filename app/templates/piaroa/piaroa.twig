@@ -5,7 +5,7 @@
 {% include 'overall/includes/piaroa' %}
 
 
-<div class="w3-row w3-white w3-padding-large" style="height: 600px">
+<div class="w3-row w3-white w3-padding-large w3-animate-left" style="height: 600px">
 	<div class="w3-col l6 m6 s12">
 		<div class="w3-panel">
 			<img src="assets/app/img/mision_piaroa/alberto_adipate.png" class="w3-image w3-col l6 m5 s5" width="300" height="371">	
@@ -32,7 +32,7 @@
 	</div>
 </div>
 
-<div class="w3-section w3-center">
+<div class="w3-section w3-center" id="desc_piaroa">
 	<div class="w3-padding-large">
 		<p class="">
 			Capacitando a nuevo liderazgo de la iglesia Cristiana piaroa
@@ -51,86 +51,94 @@
 		padding: 15% 2%;
 	}
 
-	#galeria_piaroa .w3-rest > img{
-		display: none;
-		width: 90%;
+	#galeria_piaroa #img_displayed{
+		width: 100%;
 	}
 
 	#galeria_piaroa .demo{
 		width: 100%;
 		height: 50%;
 		cursor: pointer;
-		margin: 2%;
+		padding: 5%;
 	}
 </style>
 
-<div class="w3-row w3-section w3-white" id="galeria_piaroa">
-	<div class="w3-section w3-right w3-col l4 m4 s2">
-		<div class="w3-row">
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img1.jpeg" onclick="currentDiv(1)">
-			</div>
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img2.jpeg" onclick="currentDiv(2)">
-			</div>
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img3.jpeg" onclick="currentDiv(3)">
-			</div>
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img4.jpeg" onclick="currentDiv(4)">
-			</div>
-		</div>
+<div class="w3-row w3-white" id="galeria_piaroa">
 
-		<div class="w3-row">
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img5.jpeg" onclick="currentDiv(5)">
-			</div>
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img6.jpeg" onclick="currentDiv(6)">
-			</div>
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img7.jpeg" onclick="currentDiv(7)">
-			</div>
-			<div class="w3-col l6 m6 s12">
-				<img class="demo w3-opacity w3-hover-opacity-off" src="assets/app/img/mision_piaroa/img8.jpeg" onclick="currentDiv(8)">
-			</div>
-		</div>
+	<div class="w3-section w3-col l6 m12 s12">
+		<img class="mySlides" src="assets/app/img/mision_piaroa/img21.jpeg" id="img_displayed">
 	</div>
+	<div class="w3-col l6 m12 s12">
+		<div class="w3-row">
+		<!-- se le coloca doble "opacity-off" para lograr la "vista actual" en la galeria de imagenes -->
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity-off" src="assets/app/img/mision_piaroa/img21.jpeg">
+			</div>
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img1.jpeg">
+			</div>
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img3.jpeg">
+			</div>
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img4.jpeg">
+			</div>
+		</div>
 
-	<div class="w3-rest">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img1.jpeg" style="display: block;">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img2.jpeg">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img3.jpeg">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img4.jpeg">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img5.jpeg">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img6.jpeg">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img7.jpeg">
-		<img class="mySlides" src="assets/app/img/mision_piaroa/img8.jpeg">
+		<div class="w3-row">
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img5.jpeg">
+			</div>
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img6.jpeg">
+			</div>
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img7.jpeg">
+			</div>
+			<div class="w3-col l6 m3 s3">
+				<img onclick="currentDiv(this, this.src)" class="demo w3-opacity" src="assets/app/img/mision_piaroa/img8.jpeg">
+			</div>
+		</div>
 	</div>
 
 </div>
 
 <script>
-	function currentDiv(n) {
-		showDivs(slideIndex = n);
+	function currentDiv(el, src) {
+		showDivs(el, src);
 	}
 
-	function showDivs(n) {
-		var i;
-		var x = document.getElementsByClassName("mySlides");
-		var dots = document.getElementsByClassName("demo");
-		if (n > x.length) {slideIndex = 1}
-		if (n < 1) {slideIndex = x.length}
-		for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";
-		}
+	function showDivs(el, src) {
+		let i;
+		let x = document.getElementById("img_displayed");
+		let dots = document.getElementsByClassName("demo");
+		x.className = "mySlides";
+		x.className += " w3-animate-top";
+		x.src = src;
+
 		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+			dots[i].className = "demo w3-opacity";
 		}
-		x[slideIndex-1].style.display = "block";
-		dots[slideIndex-1].className += " w3-opacity-off";
+		el.className += " w3-opacity-off w3-animate-zoom";
+
+		setTimeout(function(){
+			x.className = "mySlides";
+		}, 1000);
 	}
 </script>
 
+
+<script>
+	// When the user scrolls down 20px from the top of the document, slide down the navbar
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
+			document.getElementById("desc_piaroa").className += " w3-animate-right";
+		} else {
+			document.getElementById("desc_piaroa").className.replace(" w3-animate-right", "");
+		}
+	}
+</script>
 
 {% endblock %}
