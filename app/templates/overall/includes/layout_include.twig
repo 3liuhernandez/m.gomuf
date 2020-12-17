@@ -1,95 +1,133 @@
 {% block style_header %}{% endblock %}
 
-<header class="header w3-row w3-container w3-padding-48">
-    <div class="logo w3-col l6 m6">
-        {% include 'overall/includes/logo' %}
+<header class="header w3-container w3-padding-16 w3-white">
 
-        <div class="w3-left w3-hide-small w3-block submenu" id="submenu" style="margin-bottom: 10%;">
-            {% block submenuTop %}{% endblock %}
+	{% include 'overall/includes/logo' %}
+	<button id="btn_menu" class="w3-button w3-large w3-hide-large" onclick="w3_open()">&#9776;</button>
+    <!-- Navbar (sit on top) -->
+    <div class="topnav w3-card" id="navTop">
+        <div class="w3-bar w3-padding">
+            <a href="home" class="w3-bar-item w3-button"><b><i class="fa fa-home"></i> GOMUF</b></a>
+            <button class="w3-button w3-white w3-large w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
+            <div class="w3-right w3-hide-small w3-hide-medium w3-medium">
+                {% block submenuTop2 %}{% endblock %}
+            </div>
         </div>
     </div>
 
-    <div id="menu-top" class="w3-col l6 m6">
-	    <!-- Float links to the right. Hide them on small screens -->
-	    <div class="w3-hide-small w3-text-white w3-col l12 w3-align-right w3-center">
-	        <a id="btn_home" href="home" class="w3-bar-item w3-button w3-hover-none"><i class="fa fa-home"> Inicio</i></a>
-	        
-	        <a href="ebooks/" class="w3-bar-item w3-button w3-hover-none w3-border-bottom" data-item="ebooks">
-	            Biblioteca Virtual
-	        </a>
-	        <a href="bombona/" class="w3-bar-item w3-button w3-hover-none w3-border-bottom" data-item="bombona">Niños Bomboná</a>
-	        <a href="piaroa/" class="w3-bar-item w3-button w3-hover-none w3-border-bottom" data-item="piaroa">Misión Piaroa</a>
-	    </div>
-	</div>
-		
-	<script>
-	    path = location.pathname.replace('/gomuf.com/', '');
+    <!-- Float links to the right. Hide them on small screens -->
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-animate-right" style="display:none;" id="sidetop">
+        <!-- sidebar's header-->
+        <img src="assets/app/img/logo.png" id="logo_img" alt="GoMuf Logo">
+        {% block tituloSeccion %}{% endblock %}
+        <hr/>
+        
+        {% block submenuTop1 %}{% endblock %}
+        
+        <hr/>
+        
+        <a href="ebooks/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="ebooks">
+            <b>Biblioteca Virtual</b>
+        </a>
+
+        <a href="bombona/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="bombona">
+            <b>Niños Bomboná</b>
+        </a>
+
+        <a href="piaroa/" class="w3-bar-item w3-button w3-hover-none w3-small w3-text-blue" data-item="piaroa">
+            <b>Misión Piaroa</b>
+        </a>
+        <hr/>
+        <!-- aside bottom -->
+        <div class="w3-row w3-display-middlebottom">
+            <button class="w3-button w3-inline">
+                <a href="mailto:contacto.gomuf@gmail.com" target="_blank">
+                    <i class="fa fa-envelope-o w3-text-blue"></i>
+                </a>
+            </button>
+            <button class="w3-button">
+                <a href="https://www.facebook.com/mufvalencia.ortegaalbornoz/" target="_blank">
+                    <i class="fa fa-facebook w3-text-blue"></i>
+                </a>
+            </button>
+            <button class="w3-button">
+                <a href="https://www.instagram.com/mufvalencia/" target="_blank">
+                    <i class="fa fa-instagram w3-text-blue"></i>
+                </a>
+            </button>
+        </div>
+        <br/>
+    </div>
+    <!-- overlay -->
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer; z-index: 3;" id="overlay_navtop"></div>
+
+    <div class="w3-row w3-text-white w3-small margin-top-20" id="migas_header">
+    	<a href="home" id="btn_home"><i class="fa fa-home"></i> GoMuf &nbsp; <i class="fa fa-caret-right"></i> </a>
+    	{% block migas %}{% endblock %}
+    </div>
+
+    <script>
+	    path = location.pathname.replace('/m.gomuf.com/', '');
 	    if(path == '' || path == 'home'){
 	        document.getElementById('btn_home').style.display = "none";
 	    };
 	</script>
-
 </header>
 
 <script>
+	//window.scrollTo(0, 500);
     header = document.getElementsByTagName("header")[0];
-    
-    logo_img = document.getElementById("logo_img");
-    titulo_seccion = document.getElementById("titulo_seccion");
-    subtitulo = document.getElementById("subtitulo_seccion");
-    menu_top = document.getElementById("menu-top");
-    submenu = document.getElementById("submenu");
     banner_head = document.getElementById("banner_head");
+    navTop = document.getElementById("navTop");
 
-	window.onscroll = function() {scrollFunction()};
+    navTop.classList.add("w3-hide");
+
+    window.onload = function(){
+    	if(screen.width > 600){
+			mostrar_navTopXXL();
+		}else{
+			banner_head.classList.remove("w3-left");
+			window.onscroll = function() {
+				console.log(screen.width);
+				scrollFunction();
+			};
+		}
+    }
 
 	function scrollFunction() {
 
 		if (document.body.scrollTop >= 5 || document.documentElement.scrollTop >= 5) {
             setTimeout(function(){
-				header.classList.remove("w3-padding-48");
-
-				logo_img.style.width = "70px";
-				logo_img.style.height = "60px";
-	            titulo_seccion.classList.remove("w3-xxlarge");
-	            titulo_seccion.classList.add("w3-small");
-	            
-	            subtitulo.classList.remove("w3-xlarge");
-	            subtitulo.classList.add("w3-small");
-
-				menu_top.classList.add("w3-small");
-				menu_top.classList.add("w3-right");
-
-				submenu.classList.add("w3-small");
-				submenu.style.marginBottom = "0px";
-
-
-            	subtitulo.classList.add("w3-hide");
-            }, 1000);
+				mostrar_navTop();
+            }, 500);
 
 		} else {
             setTimeout(function(){
-	            header.classList.add("w3-padding-48");
-
-	            logo_img.style.width = "";
-				logo_img.style.height = "";
-	            
-	            titulo_seccion.classList.add("w3-xxlarge");
-	            titulo_seccion.classList.remove("w3-small");
-
-	            subtitulo.classList.remove("w3-small");
-	            subtitulo.classList.add("w3-xlarge");
-
-	            menu_top.classList.remove("w3-small");
-	            menu_top.classList.remove("w3-right");
-
-	            submenu.classList.remove("w3-small");
-	            submenu.style.marginBottom = "10%";
-
-                banner_head.style.width = "";
-				subtitulo.classList.remove("w3-hide");
-            }, 1000);
+	            ocultar_navTop();
+            }, 500);
 			
 		}
+	}
+	function mostrar_navTopXXL(){
+		console.log("navTopXXL");
+		
+		banner_head.classList.add("w3-left");
+	}
+
+	function mostrar_navTop(){
+		header.classList.remove("w3-padding-16");
+				
+		navTop.classList.remove("w3-hide");
+		navTop.classList.add("w3-top");
+		navTop.classList.add("w3-white");
+	}
+
+	function ocultar_navTop(){
+		header.classList.add("w3-padding-16");
+
+        navTop.classList.add("w3-hide");
+        navTop.classList.remove("w3-top");
+        navTop.classList.remove("w3-white");
 	}
 </script>

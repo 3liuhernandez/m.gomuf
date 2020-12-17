@@ -1,0 +1,95 @@
+{% block style_header %}{% endblock %}
+
+<header class="header w3-row w3-container w3-padding-48">
+    <div class="logo w3-col l6 m6">
+        {% include 'overall/includes/logo' %}
+
+        <div class="w3-left w3-hide-small w3-block submenu" id="submenu" style="margin-bottom: 10%;">
+            {% block submenuTop %}{% endblock %}
+        </div>
+    </div>
+
+    <div id="menu-top" class="w3-col l6 m6">
+	    <!-- Float links to the right. Hide them on small screens -->
+	    <div class="w3-hide-small w3-text-white w3-col l12 w3-align-right w3-center">
+	        <a id="btn_home" href="home" class="w3-bar-item w3-button w3-hover-none"><i class="fa fa-home"> Inicio</i></a>
+	        
+	        <a href="ebooks/" class="w3-bar-item w3-button w3-hover-none w3-border-bottom" data-item="ebooks">
+	            Biblioteca Virtual
+	        </a>
+	        <a href="bombona/" class="w3-bar-item w3-button w3-hover-none w3-border-bottom" data-item="bombona">Niños Bomboná</a>
+	        <a href="piaroa/" class="w3-bar-item w3-button w3-hover-none w3-border-bottom" data-item="piaroa">Misión Piaroa</a>
+	    </div>
+	</div>
+		
+	<script>
+	    path = location.pathname.replace('/gomuf.com/', '');
+	    if(path == '' || path == 'home'){
+	        document.getElementById('btn_home').style.display = "none";
+	    };
+	</script>
+
+</header>
+
+<script>
+    header = document.getElementsByTagName("header")[0];
+    
+    logo_img = document.getElementById("logo_img");
+    titulo_seccion = document.getElementById("titulo_seccion");
+    subtitulo = document.getElementById("subtitulo_seccion");
+    menu_top = document.getElementById("menu-top");
+    submenu = document.getElementById("submenu");
+    banner_head = document.getElementById("banner_head");
+
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+
+		if (document.body.scrollTop >= 5 || document.documentElement.scrollTop >= 5) {
+            setTimeout(function(){
+				header.classList.remove("w3-padding-48");
+
+				logo_img.style.width = "70px";
+				logo_img.style.height = "60px";
+	            titulo_seccion.classList.remove("w3-xxlarge");
+	            titulo_seccion.classList.add("w3-small");
+	            
+	            subtitulo.classList.remove("w3-xlarge");
+	            subtitulo.classList.add("w3-small");
+
+				menu_top.classList.add("w3-small");
+				menu_top.classList.add("w3-right");
+
+				submenu.classList.add("w3-small");
+				submenu.style.marginBottom = "0px";
+
+
+            	subtitulo.classList.add("w3-hide");
+            }, 1000);
+
+		} else {
+            setTimeout(function(){
+	            header.classList.add("w3-padding-48");
+
+	            logo_img.style.width = "";
+				logo_img.style.height = "";
+	            
+	            titulo_seccion.classList.add("w3-xxlarge");
+	            titulo_seccion.classList.remove("w3-small");
+
+	            subtitulo.classList.remove("w3-small");
+	            subtitulo.classList.add("w3-xlarge");
+
+	            menu_top.classList.remove("w3-small");
+	            menu_top.classList.remove("w3-right");
+
+	            submenu.classList.remove("w3-small");
+	            submenu.style.marginBottom = "10%";
+
+                banner_head.style.width = "";
+				subtitulo.classList.remove("w3-hide");
+            }, 1000);
+			
+		}
+	}
+</script>

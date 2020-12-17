@@ -1,0 +1,48 @@
+<div class="w3-text-white" id="banner_head">
+	<img src="assets/app/img/logo_blanco2.png" class="" id="logo_img" alt="GoMuf Logo">
+	<h1 class="w3-large" id="titulo_seccion">Proyecto Global</h1>
+	<h3 class="w3-center" id="subtitulo_seccion"><b><i>Metamorfosis Universitaria Fraternity</i></b></h3>
+</div>
+
+{% block appFooter %}
+    <script>
+        path = location.pathname.replace('m.gomuf.com/', '');
+        path = path.replace('/', '');
+
+        titulo_seccion = document.getElementById('titulo_seccion');
+        switch(path){
+            case 'home':
+                //console.log('estamos en: ' +path);
+                titulo_seccion.innerHTML='Proyecto Global';
+                break;
+
+            case 'ebooks/':
+                //console.log('estamos en: ' +path);
+	            titulo_seccion.innerHTML='Biblioteca Virtual';
+                //setTimeout(function(){
+	                //let bg = document.getElementsByClassName('header');
+	                	//bg[0].style.background = "rgb(165,178,209)";
+	                	//bg[0].style.background = "linear-gradient(90deg, rgba(49,49,49,0.8) 0%, rgba(77,86,117,0.85) 35%, rgba(165,178,209,0.9) 100%)";
+                //}, 2000);
+                break;
+
+            case 'piaroa/':
+                //console.log('estamos en: ' +path)
+                titulo_seccion.classList.remove('w3-xlarge');
+                titulo_seccion.classList.add('w3-medium');
+                titulo_seccion.innerHTML='<span>Coordinación</span><br/><span>Misión Piaroa</span><br/><span>de la IBMUF Valencia</span>';
+                break;
+
+            case 'bombona/':
+                //console.log('estamos en: ' +path)
+                titulo_seccion.innerHTML='Proyecto Niños <br/>Bomboná';
+                break;
+
+            default:
+                console.log(path);
+                //window.location.replace('home');
+                titulo_seccion.innerHTML='Proyecto Global';
+                break;
+        }
+    </script>
+{% endblock %}

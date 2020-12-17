@@ -1,9 +1,75 @@
 a{
     text-decoration: none;
 }
+
+.header *{
+    transition: all .3s;
+    transition-timing-function: ease-in;
+}
+
+.header{
+    min-height: 200px;
+    background: rgb(16,45,125);
+    background: linear-gradient(180deg, rgba(16,45,125,1) 0%, rgba(85,100,161,.7) 75%, rgba(238,241,255,.4) 100%);
+}
+
+.header #btn_menu{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+#banner_head img{
+    width: 90px;
+    height: 70px;
+    display: inline;
+    position: relative;
+    transition-property: width height;
+    transition-duration: .6s;
+    transition-timing-function: linear;
+    transition-delay: .3s;
+}
+
+#banner_head img, #banner_head h1{
+    vertical-align: middle;
+}
+.header h1#titulo_seccion{
+    display: inline-block;
+    font-weight: bold;
+}
+
+.header h3#subtitulo_seccion{
+    font-size: 15px;
+}
+
+
 .topnav{
     z-index:  1000;
+    left: 0;
+    text-align: left;
 }
+
+#sidetop {
+    z-index:5;
+    right: 0px;
+    top: 0px;
+    z-index:  2000;
+}
+
+#sidetop img{
+    width: 90px;
+    height: 70px;
+    display: block;
+    margin: auto;
+}
+
+#migas_header a{
+    margin: 2%;
+}
+
 #campus_accion, #alianzas{
     background-size: cover;
     background-repeat: no-repeat;
@@ -302,7 +368,7 @@ a{
 
 
 /* bomboná section*/
-#somos {
+#vision {
     background: url('../img/ninos-bombona/bg412.jpg') bottom no-repeat;
     margin-top: 0 !important;
 }
@@ -310,7 +376,7 @@ a{
     background: url('../img/ninos-bombona/bg_bus.jpg') center no-repeat;
     margin-top: 3% !important;
 }
-#somos, #programa{
+#vision, #programa{
     background-size: cover;
     padding: 5%;
 }
