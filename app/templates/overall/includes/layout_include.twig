@@ -69,7 +69,8 @@
 
     <script>
 	    path = location.pathname.replace('/m.gomuf.com/', '');
-	    if(path == '' || path == 'home'){
+        path = path.replace('/', '');
+	    if(path == '' || path == 'home' || path == '/' || path == 'home/'){
 	        document.getElementById('btn_home').style.display = "none";
 	    };
 	</script>
