@@ -1,4 +1,5 @@
 /app/templates/.compiled/**/*.php
-*.yml
 *.zip
+*.sql
+.htaccess
 /Ocrend/*.*

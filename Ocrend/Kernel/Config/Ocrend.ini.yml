@@ -22,8 +22,8 @@ database:
 # Configuración de servidor SMTP
 mailer:
   host: smtp.gmail.com
-  user: contacto.gomuf@gmail.com
-  pass: 123456R*e
+  user: example@gmail.com
+  pass: 
   port: 587
   logo:
 
