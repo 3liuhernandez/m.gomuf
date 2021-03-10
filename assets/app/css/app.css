@@ -368,23 +368,23 @@ a{
 
 
 /* bomboná section*/
-#vision {
+#vision.bombona {
     background: url('../img/ninos-bombona/bg412.jpg') bottom no-repeat;
     margin-top: 0 !important;
 }
-#programa {
+#programa.bombona {
     background: url('../img/ninos-bombona/bg_bus.jpg') center no-repeat;
     margin-top: 3% !important;
 }
-#vision, #programa{
+#vision.bombona, #programa.bombona{
     background-size: cover;
     padding: 5%;
 }
-#programa div.w3-section {
+#programa.bombona div.w3-section {
     text-align: center;
 }
 
-#sede {
+#sede.bombona {
     background: url('../img/ninos-bombona/bg_pedazo.jpg') center;
     margin-top: 0px !important;
 }
